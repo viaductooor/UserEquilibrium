@@ -4,6 +4,7 @@ import java.util.List;
 public class Floyd {
 	private float[][] m;
 	private int[][] r;
+	private float[][] d;
 	private int size;
 
 	public void setMatrix(float a[][]) {
@@ -38,6 +39,11 @@ public class Floyd {
 			}
 		}
 		this.r = _r;
+		this.d = _m;
+	}
+	
+	public float[][] getD(){
+		return this.d;
 	}
 
 	public List<Integer> getShortestPath(int origin, int destination) {
@@ -50,6 +56,10 @@ public class Floyd {
 		}
 		l.add(destination);
 		return l;
+	}
+	
+	public float getTotalCost(int origin, int destination){
+		return d[origin-1][destination-1];
 	}
 
 	@Override
@@ -71,16 +81,4 @@ public class Floyd {
 		}
 		return str;
 	}
-
-	/*
-	 * public static void main(String args[]){ float inf =
-	 * Float.POSITIVE_INFINITY; float[][]
-	 * d={{0,2,4,inf,inf,inf},{inf,0,1,4,3,inf
-	 * },{4,1,0,3,2,inf},{inf,4,3,0,2,5},{inf,3,2,inf,0,2},{inf,inf,inf,5,2,0}};
-	 * Floyd f = new Floyd(); f.setMatrix(d); f.compute();
-	 * System.out.println(f); System.out.println("6-->1:"); List<Integer> link =
-	 * f.getShortestPath(6, 1); for(int i:link){ System.out.print(i+" "); }
-	 * for(int i = 0;i<link.size()-1;i++){
-	 * System.out.println("["+link.get(i)+","+link.get(i+1)+"]"); } }
-	 */
 }

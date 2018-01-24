@@ -10,6 +10,12 @@ public class LinkSet {
 		this.set = set;
 		this.maxSize = computeMaxSize();
 	}
+	
+	public LinkSet(LinkSet ls){
+		LinkedList<Link> set = new LinkedList<Link>(ls.getSet());
+		this.setSet(set);
+		this.maxSize = ls.getMaxSize();
+	}
 
 	public void setSet(LinkedList<Link> set) {
 		this.set = set;
@@ -60,7 +66,33 @@ public class LinkSet {
 		}
 		return mat;
 	}
+	
+	public float[][] getTSurchargeMatrix(){
+		//compute marginal cost
+		for (Link l : set) {
+			l.updateRes();
+			l.updateMarginalCost();	
+		}
+		
+		//calculate link surcharge
+		int n = this.getMaxSize();
+		for(Link l:this.getSet()){
+			float lsc = (1/n)*l.getMarginalCost()+(1-(1/n))*l.getLinkSurcharge();
+			l.setLinkSurcharge(lsc);
+		}
+		float[][] mat = new float[maxSize][maxSize];
+		for (int i = 0; i < maxSize; i++) {
+			for (int j = 0; j < maxSize; j++) {
+				mat[i][j] = Float.POSITIVE_INFINITY;
+			}
+		}
+		for (Link l : set) {
+			mat[l.getInitNode() - 1][l.getTermNode() - 1] = l.getRes() + l.getLinkSurcharge();
+		}
+		return mat;
+	}
 
+	
 	public float[][] getXMatrix() {
 		float[][] mat = new float[maxSize][maxSize];
 		for (Link l : set) {

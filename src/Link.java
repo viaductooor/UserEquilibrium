@@ -7,6 +7,8 @@ public class Link {
 	private float flow;
 	private float auxFlow;
 	private float resistence;
+	private float marginalCost;
+	private float linkSurcharge;
 
 	public Link(int initNode, int termNode, float capacity, float length,
 			float freeFlowTime) {
@@ -18,6 +20,7 @@ public class Link {
 		this.freeFlowTime = freeFlowTime;
 		this.flow = 0;
 		this.auxFlow = 0;
+		this.linkSurcharge = 0;
 		updateRes();
 	}
 
@@ -80,6 +83,27 @@ public class Link {
 
 	public void setRes(float res) {
 		this.resistence = res;
+	}
+
+	public float getMarginalCost() {
+		return marginalCost;
+	}
+
+	public void setMarginalCost(float marginalCost) {
+		this.marginalCost = marginalCost;
+	}
+
+	public float getLinkSurcharge() {
+		return linkSurcharge;
+	}
+
+	public void setLinkSurcharge(float linkSurcharge) {
+		this.linkSurcharge = linkSurcharge;
+	}
+	
+	public void updateMarginalCost(){
+		float mc = (float) (this.getFlow()*this.getFreeFlowTime()*(4*Math.pow(this.getFlow(), 3)*0.15)/(Math.pow(this.getCapacity(), 4)));
+		this.setMarginalCost(mc);
 	}
 
 	@Override

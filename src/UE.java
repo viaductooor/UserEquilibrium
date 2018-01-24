@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.List;
 
 public class UE {
 	private LinkSet ls; // data of links in the map
@@ -46,10 +47,63 @@ public class UE {
 		System.out.print(ls);
 	}
 
+	public void updateDemand() {
+		// create new LinkSet
+		// LinkSet _ls = new LinkSet(ls);
+		// LinkedList<ODPair> _odset = new LinkedList<ODPair>(ods);
+		// create and initiate an ODPairCostSet
+		init();
+		List<ODPairCost> _odcost = new LinkedList<ODPairCost>();
+		for (ODPair odp : ods) {
+			_odcost.add(new ODPairCost(odp));
+		}
+		Floyd f = new Floyd();
+		int count = 0;//
+		while (updateDemandCriterion(_odcost)) {
+			count++;//
+			compute(50); // 1.UE assignment
+			float[][] t = ls.getTSurchargeMatrix(); // 2.compute margin cost and
+													// 3.calculate link
+													// surcharge
+			f.setMatrix(t);
+			f.compute();
+			for (ODPairCost odc : _odcost) {
+				float totalCost = f.getTotalCost(odc.getOdPair().getOrigin(),
+						odc.getOdPair().getDestination());
+				odc.addCost(totalCost);
+				float originCost = odc.getOriginCost();
+				if (totalCost < originCost) {
+					ODPair odp = odc.getOdPair();
+					odp.setDemand((float) (odp.getDemand() * 1.05));
+				}
+			}
+		}
+		System.out.println("COUNT:"+count);
+		System.out.println("CHANGED DEMAND:");
+		for (ODPair odp : ods) {
+			System.out.println(odp);
+		}
+	}
+
+	public boolean updateDemandCriterion(List<ODPairCost> costs) {
+		if (costs.get(0).getCost().size() < 2) {
+			return true;
+		} else {
+			for (ODPairCost cost : costs) {
+				if (cost.getLastCost() < cost.getOriginCost()) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
 	public static void main(String[] args) {
-		UE ue = new UE();
-		ue.init();
-		ue.compute(50);
+		//UE ue = new UE();
+		//ue.init();
+		//ue.compute(50);
+		ue.updateDemand();
 	}
 
 }
