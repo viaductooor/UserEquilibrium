@@ -67,7 +67,7 @@ public class LinkSet {
 		return mat;
 	}
 	
-	public float[][] getTSurchargeMatrix(int n){
+	/*public float[][] getTSurchargeMatrix(int n){
 		//compute marginal cost
 		for (Link l : this.getSet()) {
 			l.updateRes();
@@ -90,7 +90,7 @@ public class LinkSet {
 			mat[l.getInitNode() - 1][l.getTermNode() - 1] = l.getTravelTime() + l.getLinkSurcharge();
 		}
 		return mat;
-	}
+	}*/
 
 	
 	public float[][] getXMatrix() {

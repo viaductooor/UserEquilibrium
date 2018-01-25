@@ -4,15 +4,16 @@ import java.util.List;
 public class UE {
 	private LinkSet ls; // data of links in the map
 	private LinkedList<ODPair> ods; // OD-Pairs in the map
+	
 
 	public void init() {
 		MyFileReader mfr = new MyFileReader();
 		this.ls = mfr.getLinks();
 		this.ods = mfr.getDemand();
-		System.out.println("DEMAND:");
+		/*System.out.println("DEMAND:");
 		for (ODPair odp : ods) {
 			System.out.println(odp);
-		}
+		}*/
 		/*
 		 * System.out
 		 * .println("---------------------------------------------------");
@@ -40,7 +41,7 @@ public class UE {
 			float flowsum = ls.getTotalFlow();
 			af.move(ls, alpha);
 			step = ls.getTotalFlow() - flowsum;
-			System.out.println("decrease of total flow:" + step);
+			//System.out.println("decrease of total flow:" + step);
 			n++;
 		}
 		ls.updateTMatrix();
@@ -48,10 +49,7 @@ public class UE {
 		System.out.print(ls);
 	}
 
-	public void updateDemand() {
-		/**
-		 * Change Demand
-		 */
+	/*public void updateDemand() {
 		init();
 		compute(50);
 		List<ODPairCost> _odcost = new LinkedList<ODPairCost>();
@@ -59,7 +57,6 @@ public class UE {
 			_odcost.add(new ODPairCost(odp));
 		}
 
-		/** compute original cost */
 		Floyd f = new Floyd();
 		float[][] t = ls.getTMatrix();
 		f.setMatrix(t);
@@ -71,7 +68,6 @@ public class UE {
 			odc.addCost(totalCost);
 		}
 
-		/** clear demand */
 		for (ODPair odp : ods) {
 			odp.setDemand(0);
 		}
@@ -104,33 +100,24 @@ public class UE {
 		for (ODPair odp : ods) {
 			System.out.println(odp);
 		}
+	}*/
+
+
+	public LinkSet getLs() {
+		return ls;
 	}
 
-	public boolean updateDemandCriterion(List<ODPairCost> costs) {
-		for (ODPairCost cost : costs) {
-			if (cost.getLastCost() < cost.getOriginCost()) {
-				return true;
-			}
-		}
-		return false;
+
+	public LinkedList<ODPair> getOds() {
+		return ods;
 	}
 
-	public boolean outCriterion(float f, LinkSet ls) {
-		float sum = 0;
-		for (Link l : ls.getSet()) {
-			sum += Math.abs(l.getLinkSurcharge() - l.getLinkSurchargeLast());
-		}
-		if (sum < f) {
-			return true;
-		}
-		return false;
-	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		UE ue = new UE();
-		// ue.init();
-		// ue.compute(50);
-		ue.updateDemand();
-	}
+		ue.init();
+		ue.compute(50);
+		//ue.updateDemand();
+	}*/
 
 }

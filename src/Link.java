@@ -7,9 +7,6 @@ public class Link {
 	private float flow;
 	private float auxFlow;
 	private float travelTime;
-	private float marginalCost;
-	private float linkSurcharge;
-	private float linkSurchargeLast;
 
 	public Link(int initNode, int termNode, float capacity, float length,
 			float freeFlowTime) {
@@ -21,21 +18,11 @@ public class Link {
 		this.freeFlowTime = freeFlowTime;
 		this.flow = 0;
 		this.auxFlow = 0;
-		this.linkSurcharge = 0;
-		this.linkSurchargeLast = 0;
 		updateRes();
 	}
 
 	public void setFlow(float flow) {
 		this.flow = flow;
-	}
-
-	public float getLinkSurchargeLast() {
-		return linkSurchargeLast;
-	}
-
-	public void setLinkSurchargeLast(float linkSurchargeLast) {
-		this.linkSurchargeLast = linkSurchargeLast;
 	}
 
 	public float getFlow() {
@@ -95,26 +82,6 @@ public class Link {
 		this.travelTime = res;
 	}
 
-	public float getMarginalCost() {
-		return marginalCost;
-	}
-
-	public void setMarginalCost(float marginalCost) {
-		this.marginalCost = marginalCost;
-	}
-
-	public float getLinkSurcharge() {
-		return linkSurcharge;
-	}
-
-	public void setLinkSurcharge(float linkSurcharge) {
-		this.linkSurcharge = linkSurcharge;
-	}
-	
-	public void updateMarginalCost(){
-		float mc = (float) (this.getFlow()*this.getFreeFlowTime()*(4*Math.pow(this.getFlow(), 3)*0.15)/(Math.pow(this.getCapacity(), 4)));
-		this.setMarginalCost(mc);
-	}
 
 	@Override
 	public String toString() {
