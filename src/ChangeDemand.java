@@ -153,13 +153,13 @@ public final class ChangeDemand {
 			 */
 			for(MyODPair modp:odList){
 				modp.setDemand(0.0f);
-				System.out.println(modp);
+				//System.out.println(modp);
 			}
 			do {
 				/**
 				 * compute shortest path
 				 */
-				//System.out.println("count " + count + " in");
+				System.out.println("count " + count + " in");
 				float[][] mat = getTSurchargeMatrix(linkList, maxSize);
 				f.setMatrix(mat);
 				f.compute();
@@ -173,7 +173,7 @@ public final class ChangeDemand {
 						increaseDemandBy(5, modp);
 					}
 				}
-			} while (isTotalSmallerThanOriginal(odList));
+			} while (!isTotalSmallerThanOriginal(odList));
 		} while (!isSumSmallerThan(5, linkList));
 	}
 
