@@ -30,4 +30,13 @@ public class ODPairCost {
 		this.odPair = odp;
 		this.cost = new LinkedList<Float>();
 	}
+	@Override
+	public String toString() {
+		String str ="";
+		for(Float f:this.cost){
+			str=str+","+f;
+		}
+		return "ODPairCost [odPair=" + odPair + ", cost=" + str + "]";
+	}
+	
 }

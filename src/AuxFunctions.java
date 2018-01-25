@@ -13,7 +13,6 @@ public class AuxFunctions {
 		for (ODPair odpair : odset) {
 			int x = odpair.getOrigin();
 			int y = odpair.getDestination();
-			float totalCost = f.getTotalCost(x, y);
 			List<Integer> path = f.getShortestPath(x, y);
 			for (int i = 0; i < path.size() - 1; i++) {
 				int init = path.get(i);
@@ -23,31 +22,21 @@ public class AuxFunctions {
 			}
 		}
 	}
-	
-	/*public void updateDemand(LinkSet ls,LinkedList<ODPair> odset){
-		//create new LinkSet and ODPairSet
-		LinkSet _ls = new LinkSet(ls);
-		LinkedList<ODPair> _odset = new LinkedList<ODPair>(odset);
-		//create and initiate an ODPairCostSet
-		List<ODPairCost> _odcost = new LinkedList<ODPairCost>();
-		for(ODPair odp:odset){
-			_odcost.add(new ODPairCost(odp));
-		}
-		
-		
-		while(true){
-			float[][] t = _ls.getTSurchargeMatrix();
-			
-		}
-	}*/
+	public static void increaseBy5(ODPair odp){
+		/*float demand = odp.getDemand();
+		float originDemand = odp.getOdemand();
+		if(demand<originDemand){
+			odp.setDemand((float) (demand+0.05*originDemand));
+		}*/
+	}
 
 	public void testAllOrNothing(ODPair odp, LinkSet ls) {
 		ls.clearAuxFlow();
 		float min = Float.POSITIVE_INFINITY;
 		Link link = null;
 		for (Link l : ls.getSet()) {
-			if (l.getRes() < min) {
-				min = l.getRes();
+			if (l.getTravelTime() < min) {
+				min = l.getTravelTime();
 				link = l;
 			}
 		}

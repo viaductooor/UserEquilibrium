@@ -1,4 +1,4 @@
-public class ODPair {
+public final class ODPair {
 	private int origin;
 	private int destination;
 	private float demand;

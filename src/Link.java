@@ -6,9 +6,10 @@ public class Link {
 	private float freeFlowTime;
 	private float flow;
 	private float auxFlow;
-	private float resistence;
+	private float travelTime;
 	private float marginalCost;
 	private float linkSurcharge;
+	private float linkSurchargeLast;
 
 	public Link(int initNode, int termNode, float capacity, float length,
 			float freeFlowTime) {
@@ -21,11 +22,20 @@ public class Link {
 		this.flow = 0;
 		this.auxFlow = 0;
 		this.linkSurcharge = 0;
+		this.linkSurchargeLast = 0;
 		updateRes();
 	}
 
 	public void setFlow(float flow) {
 		this.flow = flow;
+	}
+
+	public float getLinkSurchargeLast() {
+		return linkSurchargeLast;
+	}
+
+	public void setLinkSurchargeLast(float linkSurchargeLast) {
+		this.linkSurchargeLast = linkSurchargeLast;
 	}
 
 	public float getFlow() {
@@ -40,13 +50,13 @@ public class Link {
 		this.auxFlow = f;
 	}
 
-	public float getRes() {
-		return this.resistence;
+	public float getTravelTime() {
+		return this.travelTime;
 	}
 
 	public void updateRes() {
 		// 根据当前flow和其他固定属性计算路阻
-		this.resistence = (float) (((Math.pow(this.flow / this.capacity, 4)) * 0.15 + 1) * this.freeFlowTime);
+		this.travelTime = (float) (((Math.pow(this.flow / this.capacity, 4)) * 0.15 + 1) * this.freeFlowTime);
 	}
 
 	public float[] getContent() {
@@ -81,8 +91,8 @@ public class Link {
 		this.freeFlowTime = freeFlowTime;
 	}
 
-	public void setRes(float res) {
-		this.resistence = res;
+	public void setTravelTime(float res) {
+		this.travelTime = res;
 	}
 
 	public float getMarginalCost() {

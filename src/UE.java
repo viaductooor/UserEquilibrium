@@ -13,10 +13,11 @@ public class UE {
 		for (ODPair odp : ods) {
 			System.out.println(odp);
 		}
-		System.out
-				.println("---------------------------------------------------");
-		System.out.println("LINKS:");
-		System.out.println(ls);
+		/*
+		 * System.out
+		 * .println("---------------------------------------------------");
+		 * System.out.println("LINKS:"); System.out.println(ls);
+		 */
 	}
 
 	public void compute(float diff) {
@@ -25,10 +26,10 @@ public class UE {
 		AuxFunctions af = new AuxFunctions();
 		af.allOrNothing(ods, ls);
 		ls.y2x();
-		System.out.println("INIT: ");
-		System.out.print(ls);
-		System.out
-				.println("---------------------------------------------------");
+		/*
+		 * System.out.println("INIT: "); System.out.print(ls); System.out
+		 * .println("---------------------------------------------------");
+		 */
 		float alpha = 1;
 		int n = 1;
 		float step = Float.POSITIVE_INFINITY;
@@ -48,37 +49,57 @@ public class UE {
 	}
 
 	public void updateDemand() {
-		// create new LinkSet
-		// LinkSet _ls = new LinkSet(ls);
-		// LinkedList<ODPair> _odset = new LinkedList<ODPair>(ods);
-		// create and initiate an ODPairCostSet
+		/**
+		 * Change Demand
+		 */
 		init();
+		compute(50);
 		List<ODPairCost> _odcost = new LinkedList<ODPairCost>();
 		for (ODPair odp : ods) {
 			_odcost.add(new ODPairCost(odp));
 		}
+
+		/** compute original cost */
 		Floyd f = new Floyd();
-		int count = 0;//
-		while (updateDemandCriterion(_odcost)) {
+		float[][] t = ls.getTMatrix();
+		f.setMatrix(t);
+		f.compute();
+		for (ODPairCost odc : _odcost) {
+			int origin = odc.getOdPair().getOrigin();
+			int destination = odc.getOdPair().getDestination();
+			float totalCost = f.getTotalCost(origin, destination);
+			odc.addCost(totalCost);
+		}
+
+		/** clear demand */
+		for (ODPair odp : ods) {
+			odp.setDemand(0);
+		}
+
+		int count = 0;
+		do {
 			count++;//
 			compute(50); // 1.UE assignment
-			float[][] t = ls.getTSurchargeMatrix(); // 2.compute margin cost and
-													// 3.calculate link
-													// surcharge
-			f.setMatrix(t);
-			f.compute();
-			for (ODPairCost odc : _odcost) {
-				float totalCost = f.getTotalCost(odc.getOdPair().getOrigin(),
-						odc.getOdPair().getDestination());
-				odc.addCost(totalCost);
-				float originCost = odc.getOriginCost();
-				if (totalCost < originCost) {
+			t = ls.getTSurchargeMatrix(count); // 2.compute margin cost and
+											// 3.calculate link
+			f.compute();								// surcharge
+			do {
+				for (ODPairCost odc : _odcost) {
 					ODPair odp = odc.getOdPair();
-					odp.setDemand((float) (odp.getDemand() * 1.05));
+					int origin = odp.getOrigin();
+					int des = odp.getDestination();
+					float totalCost = f.getTotalCost(origin, des);
+					odc.addCost(totalCost);
+					float originCost = odc.getOriginCost();
+					if (totalCost <= originCost) {
+						AuxFunctions.increaseBy5(odp);
+					}
 				}
-			}
-		}
-		System.out.println("COUNT:"+count);
+				f.compute();
+			} while (updateDemandCriterion(_odcost));
+
+		} while (!outCriterion(5, ls));
+		System.out.println("COUNT:" + count);
 		System.out.println("CHANGED DEMAND:");
 		for (ODPair odp : ods) {
 			System.out.println(odp);
@@ -86,23 +107,29 @@ public class UE {
 	}
 
 	public boolean updateDemandCriterion(List<ODPairCost> costs) {
-		if (costs.get(0).getCost().size() < 2) {
-			return true;
-		} else {
-			for (ODPairCost cost : costs) {
-				if (cost.getLastCost() < cost.getOriginCost()) {
-					return true;
-				}
+		for (ODPairCost cost : costs) {
+			if (cost.getLastCost() < cost.getOriginCost()) {
+				return true;
 			}
 		}
+		return false;
+	}
 
+	public boolean outCriterion(float f, LinkSet ls) {
+		float sum = 0;
+		for (Link l : ls.getSet()) {
+			sum += Math.abs(l.getLinkSurcharge() - l.getLinkSurchargeLast());
+		}
+		if (sum < f) {
+			return true;
+		}
 		return false;
 	}
 
 	public static void main(String[] args) {
-		//UE ue = new UE();
-		//ue.init();
-		//ue.compute(50);
+		UE ue = new UE();
+		// ue.init();
+		// ue.compute(50);
 		ue.updateDemand();
 	}
 

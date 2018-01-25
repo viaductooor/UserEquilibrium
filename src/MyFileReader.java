@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MyFileReader {
+public final class MyFileReader {
 	private String demand_src = "files/Sioux-Falls-Demand.txt";
 	private String link_src = "files/Sioux-Falls-Network.txt";
 	private String num_pattern = "\\d+\\.?\\d*";

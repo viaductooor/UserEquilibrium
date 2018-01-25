@@ -62,22 +62,22 @@ public class LinkSet {
 			}
 		}
 		for (Link l : set) {
-			mat[l.getInitNode() - 1][l.getTermNode() - 1] = l.getRes();
+			mat[l.getInitNode() - 1][l.getTermNode() - 1] = l.getTravelTime();
 		}
 		return mat;
 	}
 	
-	public float[][] getTSurchargeMatrix(){
+	public float[][] getTSurchargeMatrix(int n){
 		//compute marginal cost
-		for (Link l : set) {
+		for (Link l : this.getSet()) {
 			l.updateRes();
 			l.updateMarginalCost();	
 		}
 		
 		//calculate link surcharge
-		int n = this.getMaxSize();
 		for(Link l:this.getSet()){
 			float lsc = (1/n)*l.getMarginalCost()+(1-(1/n))*l.getLinkSurcharge();
+			l.setLinkSurchargeLast(l.getLinkSurcharge());
 			l.setLinkSurcharge(lsc);
 		}
 		float[][] mat = new float[maxSize][maxSize];
@@ -86,8 +86,8 @@ public class LinkSet {
 				mat[i][j] = Float.POSITIVE_INFINITY;
 			}
 		}
-		for (Link l : set) {
-			mat[l.getInitNode() - 1][l.getTermNode() - 1] = l.getRes() + l.getLinkSurcharge();
+		for (Link l : this.getSet()) {
+			mat[l.getInitNode() - 1][l.getTermNode() - 1] = l.getTravelTime() + l.getLinkSurcharge();
 		}
 		return mat;
 	}
@@ -145,7 +145,7 @@ public class LinkSet {
 		for (Link l : set) {
 			str += l.getInitNode() + "\t" + l.getTermNode() + "\t"
 					+ df.format(l.getFlow()) + "\t" + l.getAuxFlow() + "\t"
-					+ df.format(l.getRes()) + "\n";
+					+ df.format(l.getTravelTime()) + "\n";
 		}
 		return str;
 	}
