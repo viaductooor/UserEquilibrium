@@ -18,7 +18,7 @@ public class Link {
 		this.freeFlowTime = freeFlowTime;
 		this.flow = 0;
 		this.auxFlow = 0;
-		updateRes();
+		updateTravelTime();
 	}
 
 	public void setFlow(float flow) {
@@ -41,7 +41,7 @@ public class Link {
 		return this.travelTime;
 	}
 
-	public void updateRes() {
+	public void updateTravelTime() {
 		// 根据当前flow和其他固定属性计算路阻
 		this.travelTime = (float) (((Math.pow(this.flow / this.capacity, 4)) * 0.15 + 1) * this.freeFlowTime);
 	}
@@ -82,10 +82,14 @@ public class Link {
 		this.travelTime = res;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Link [initNode=" + initNode + ", termNode=" + termNode + "]";
+		return "Link [initNode=" + initNode + ", termNode=" + termNode
+				+ ", capacity=" + capacity + ", freeFlowTime=" + freeFlowTime
+				+ ", flow=" + flow + ", travelTime=" + travelTime + "]";
 	}
+
+
+
 
 }

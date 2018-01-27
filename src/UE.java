@@ -10,15 +10,15 @@ public class UE {
 		MyFileReader mfr = new MyFileReader();
 		this.ls = mfr.getLinks();
 		this.ods = mfr.getDemand();
-		/*System.out.println("DEMAND:");
-		for (ODPair odp : ods) {
-			System.out.println(odp);
-		}*/
-		/*
-		 * System.out
-		 * .println("---------------------------------------------------");
-		 * System.out.println("LINKS:"); System.out.println(ls);
-		 */
+	}
+	
+	public void setLinkSet(LinkedList<Link> list){
+		LinkSet ls = new LinkSet(list);
+		this.ls = ls;
+	}
+	
+	public void setDemandSet(LinkedList<ODPair> odp){
+		this.ods = odp;
 	}
 
 	public void compute(float diff) {
@@ -27,10 +27,6 @@ public class UE {
 		AuxFunctions af = new AuxFunctions();
 		af.allOrNothing(ods, ls);
 		ls.y2x();
-		/*
-		 * System.out.println("INIT: "); System.out.print(ls); System.out
-		 * .println("---------------------------------------------------");
-		 */
 		float alpha = 1;
 		int n = 1;
 		float step = Float.POSITIVE_INFINITY;
@@ -45,63 +41,9 @@ public class UE {
 			n++;
 		}
 		ls.updateTMatrix();
-		System.out.println("RESULT: ");
-		System.out.print(ls);
+//		System.out.println("RESULT: ");
+//		System.out.print(ls);
 	}
-
-	/*public void updateDemand() {
-		init();
-		compute(50);
-		List<ODPairCost> _odcost = new LinkedList<ODPairCost>();
-		for (ODPair odp : ods) {
-			_odcost.add(new ODPairCost(odp));
-		}
-
-		Floyd f = new Floyd();
-		float[][] t = ls.getTMatrix();
-		f.setMatrix(t);
-		f.compute();
-		for (ODPairCost odc : _odcost) {
-			int origin = odc.getOdPair().getOrigin();
-			int destination = odc.getOdPair().getDestination();
-			float totalCost = f.getTotalCost(origin, destination);
-			odc.addCost(totalCost);
-		}
-
-		for (ODPair odp : ods) {
-			odp.setDemand(0);
-		}
-
-		int count = 0;
-		do {
-			count++;//
-			compute(50); // 1.UE assignment
-			t = ls.getTSurchargeMatrix(count); // 2.compute margin cost and
-											// 3.calculate link
-			f.compute();								// surcharge
-			do {
-				for (ODPairCost odc : _odcost) {
-					ODPair odp = odc.getOdPair();
-					int origin = odp.getOrigin();
-					int des = odp.getDestination();
-					float totalCost = f.getTotalCost(origin, des);
-					odc.addCost(totalCost);
-					float originCost = odc.getOriginCost();
-					if (totalCost <= originCost) {
-						AuxFunctions.increaseBy5(odp);
-					}
-				}
-				f.compute();
-			} while (updateDemandCriterion(_odcost));
-
-		} while (!outCriterion(5, ls));
-		System.out.println("COUNT:" + count);
-		System.out.println("CHANGED DEMAND:");
-		for (ODPair odp : ods) {
-			System.out.println(odp);
-		}
-	}*/
-
 
 	public LinkSet getLs() {
 		return ls;
@@ -113,11 +55,10 @@ public class UE {
 	}
 
 
-	/*public static void main(String[] args) {
-		UE ue = new UE();
-		ue.init();
-		ue.compute(50);
-		//ue.updateDemand();
-	}*/
+//	public static void main(String[] args) {
+//		UE ue = new UE();
+//		ue.init();
+//		ue.compute(50);
+//	}
 
 }

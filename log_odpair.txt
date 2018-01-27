@@ -1,0 +1,24 @@
+
+
+Outter loop 1:
+
+MyODPair [origin=1, destination=3, demand=475.0, cost=0.0, originCost=31.468546, percentage=0.0]
+---------------------------------------
+
+
+Outter loop 1; inner loop 1:
+
+MyODPair [origin=1, destination=3, demand=475.0, cost=59.876297, originCost=31.468546, percentage=0.0]
+---------------------------------------
+
+
+Outter loop 2:
+
+MyODPair [origin=1, destination=3, demand=475.0, cost=59.876297, originCost=31.468546, percentage=0.0]
+---------------------------------------
+
+
+Outter loop 2; inner loop 1:
+
+MyODPair [origin=1, destination=3, demand=475.0, cost=59.875237, originCost=31.468546, percentage=0.0]
+---------------------------------------

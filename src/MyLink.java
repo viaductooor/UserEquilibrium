@@ -17,16 +17,16 @@ public class MyLink {
 		surcharge = 0;
 		lastSurcharge = 0;
 	}
-	
-	public float getTravelTime(){
+
+	public float getTravelTime() {
 		return link.getTravelTime();
 	}
-	
-	public float getFreeFlowTime(){
+
+	public float getFreeFlowTime() {
 		return link.getFreeFlowTime();
 	}
-	
-	public float getCapacity(){
+
+	public float getCapacity() {
 		return link.getCapacity();
 	}
 
@@ -61,4 +61,17 @@ public class MyLink {
 	public void setLastSurcharge(float lastSurcharge) {
 		this.lastSurcharge = lastSurcharge;
 	}
+	
+	public float getFlow(){
+		return link.getFlow();
+	}
+
+	@Override
+	public String toString() {
+		return "MyLink ["+"init= " + link.getInitNode() + ", term="
+				+ link.getTermNode() + ", flow=" + link.getFlow()
+				+ ", lastSurcharge="+lastSurcharge+", surcharge=" + surcharge + ", marginalcost=" + marginalCost
+				+ "]";
+	}
+
 }

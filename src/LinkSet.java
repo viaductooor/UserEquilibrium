@@ -53,7 +53,7 @@ public class LinkSet {
 
 	public float[][] getTMatrix() {
 		for (Link l : set) {
-			l.updateRes();
+			l.updateTravelTime();
 		}
 		float[][] mat = new float[maxSize][maxSize];
 		for (int i = 0; i < maxSize; i++) {
@@ -127,7 +127,7 @@ public class LinkSet {
 
 	public void updateTMatrix() {
 		for (Link l : set) {
-			l.updateRes();
+			l.updateTravelTime();
 		}
 	}
 

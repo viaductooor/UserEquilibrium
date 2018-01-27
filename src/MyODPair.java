@@ -1,5 +1,5 @@
 /**
- * a class based on ODPair, but contains cost infomation.
+ * a class based on ODPair, but contains cost information.
  * 
  * @author John Smith
  * 
@@ -8,11 +8,11 @@ public class MyODPair {
 	private ODPair odpair;
 	private float originCost;
 	private float cost;
-	private float originDemand;
+	private float increPercent;
 
 	public MyODPair(ODPair odp) {
 		this.odpair = odp;
-		this.originDemand = odp.getDemand();
+		this.increPercent = 0;
 	}
 	
 	public void setDemand(float demand){
@@ -22,16 +22,14 @@ public class MyODPair {
 	public float getDemand(){
 		return odpair.getDemand();
 	}
-	
-	public float getOriginDemand() {
-		return originDemand;
+
+	public float getIncrePercent() {
+		return increPercent;
 	}
 
-	public void setOriginDemand(float originDemand) {
-		this.originDemand = originDemand;
+	public void setIncrePercent(float increPercent) {
+		this.increPercent = increPercent;
 	}
-
-	
 
 	public void setOriginCost(float c) {
 		this.originCost = c;
@@ -60,7 +58,7 @@ public class MyODPair {
 	@Override
 	public String toString() {
 		return "MyODPair [origin=" + odpair.getOrigin() + ", destination=" + odpair.getDestination()
-				+ ", demand=" + getDemand() + ", originDemand=" + originDemand + "]";
+				+ ", demand=" + getDemand()+", cost="+cost+", originCost="+originCost+", percentage="+increPercent+"]";
 	}
 	
 }
