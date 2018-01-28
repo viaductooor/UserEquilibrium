@@ -70,7 +70,7 @@ public class MyLink {
 	public String toString() {
 		return "MyLink ["+"init= " + link.getInitNode() + ", term="
 				+ link.getTermNode() + ", flow=" + link.getFlow()
-				+ ", lastSurcharge="+lastSurcharge+", surcharge=" + surcharge + ", marginalcost=" + marginalCost
+				+ ", travelTime="+link.getTravelTime()+", lastSurcharge="+lastSurcharge+", surcharge=" + surcharge + ", marginalcost=" + marginalCost
 				+ "]";
 	}
 

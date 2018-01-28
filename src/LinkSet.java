@@ -143,8 +143,8 @@ public class LinkSet {
 		String str = "";
 		str += "(ini, term, x, y, t)\n";
 		for (Link l : set) {
-			str += l.getInitNode() + "\t" + l.getTermNode() + "\t"
-					+ df.format(l.getFlow()) + "\t" + l.getAuxFlow() + "\t"
+			str += l.getInitNode() + "\t\t\t" + l.getTermNode() + "\t\t\t"
+					+ df.format(l.getFlow()) + "\t\t\t" + l.getAuxFlow() + "\t\t\t"
 					+ df.format(l.getTravelTime()) + "\n";
 		}
 		return str;

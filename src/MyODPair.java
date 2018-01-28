@@ -9,10 +9,20 @@ public class MyODPair {
 	private float originCost;
 	private float cost;
 	private float increPercent;
+	private float originDemand;
+
+	public float getOriginDemand() {
+		return originDemand;
+	}
+
+	public void setOriginDemand(float originDemand) {
+		this.originDemand = originDemand;
+	}
 
 	public MyODPair(ODPair odp) {
 		this.odpair = odp;
 		this.increPercent = 0;
+		this.originDemand = odp.getDemand();
 	}
 	
 	public void setDemand(float demand){
