@@ -9,15 +9,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class MyFileReader {
-	private String demand_src = "files/Sioux-Falls-Demand.txt";
-	private String link_src = "files/Sioux-Falls-Network.txt";
+	private String demand_src = "files/Winnipeg_trips.txt";
+	private String link_src = "files/Winnipeg_net.txt";
 	private String num_pattern = "\\d+\\.?\\d*";
 
 	public LinkedList<ODPair> getDemand() {
 		LinkedList<ODPair> odps = new LinkedList<ODPair>();
 		BufferedReader br = null;
 		Pattern phead = Pattern.compile("\\D+(\\d+)\\D*");
-		Pattern pitem = Pattern.compile("\\D+(\\d+)\\D+:\\D+(\\d+).0;");
+		Pattern pitem = Pattern.compile("\\D+(\\d+)\\D+:\\D+(\\d+)\\D+;");
 		try {
 			br = new BufferedReader(new FileReader(demand_src));
 			String str = null;

@@ -14,19 +14,19 @@ public final class ChangeDemand {
 		/**
 		 * TEST
 		 */
-//		Link l1 = new Link(1, 2, 200, 0, 10);
-//		Link l2 = new Link(1, 4, 150, 0, 11);
-//		Link l3 = new Link(2, 3, 200, 0, 10);
-//		Link l4 = new Link(4, 3, 150, 0, 11);
-//		LinkedList<Link> mlist = new LinkedList<Link>();
-//		mlist.add(l1);
-//		mlist.add(l2);
-//		mlist.add(l3);
-//		mlist.add(l4);
-//		LinkedList<ODPair> odl = new LinkedList<ODPair>();
-//		odl.add(new ODPair(1, 3, 475));
-//		ue.setLinkSet(mlist);
-//		ue.setDemandSet(odl);
+		// Link l1 = new Link(1, 2, 200, 0, 10);
+		// Link l2 = new Link(1, 4, 150, 0, 11);
+		// Link l3 = new Link(2, 3, 200, 0, 10);
+		// Link l4 = new Link(4, 3, 150, 0, 11);
+		// LinkedList<Link> mlist = new LinkedList<Link>();
+		// mlist.add(l1);
+		// mlist.add(l2);
+		// mlist.add(l3);
+		// mlist.add(l4);
+		// LinkedList<ODPair> odl = new LinkedList<ODPair>();
+		// odl.add(new ODPair(1, 3, 475));
+		// ue.setLinkSet(mlist);
+		// ue.setDemandSet(odl);
 
 		List<Link> ll = ue.getLs().getSet();
 		List<ODPair> ol = ue.getOds();
@@ -43,7 +43,7 @@ public final class ChangeDemand {
 		/**
 		 * set original total cost
 		 */
-		ue.compute(50);
+		ue.compute(5000);
 		System.out.println(ue.getLs());
 		Floyd f = new Floyd();
 		f.setMatrix(ue.getLs().getTMatrix());
@@ -130,19 +130,18 @@ public final class ChangeDemand {
 			Floyd f) {
 		float demand = modp.getOriginDemand();
 		float per = modp.getIncrePercent();
-		//if (per < 1) {
-			per = per + n;
-			modp.setIncrePercent(per);
-			int origin = modp.getOdpair().getOrigin();
-			int des = modp.getOdpair().getDestination();
-			List<Integer> l = f.getShortestPath(origin, des);
-			for (int i = 0; i < l.size() - 1; i++) {
-				MyLink _l = ChangeDemand.getLink(l.get(i), l.get(i + 1),
-						linklist);
-				_l.getLink().setFlow(_l.getLink().getFlow() + n * demand);
-				_l.getLink().updateTravelTime();
-			}
-		//}
+		// if (per < 1) {
+		per = per + n;
+		modp.setIncrePercent(per);
+		int origin = modp.getOdpair().getOrigin();
+		int des = modp.getOdpair().getDestination();
+		List<Integer> l = f.getShortestPath(origin, des);
+		for (int i = 0; i < l.size() - 1; i++) {
+			MyLink _l = ChangeDemand.getLink(l.get(i), l.get(i + 1), linklist);
+			_l.getLink().setFlow(_l.getLink().getFlow() + n * demand);
+			_l.getLink().updateTravelTime();
+		}
+		// }
 	}
 
 	public static MyLink getLink(int start, int end, List<MyLink> list) {
@@ -193,15 +192,19 @@ public final class ChangeDemand {
 		LogWriter lw = new LogWriter(linkList, odList);
 		lw.init();
 
-		int count = 0;
+		lw.logWriteLink("Original Link:");
+		lw.logWriteOd("Original Trip");
+
+		int count1 = 0;
 		int count2;
 		Floyd f = new Floyd();
 		int costflag = 0;
+		int num100percent = 0;
 		float surchargeFlag;
 
 		do {
-			count++;
-			ue.compute(50);
+			count1++;
+			ue.compute(5000);
 
 			/**
 			 * update marginal cost and link surcharge
@@ -212,85 +215,79 @@ public final class ChangeDemand {
 				l.setMarginalCost(marginalCost);
 				float nowSurcharge = l.getSurcharge();
 				l.setLastSurcharge(nowSurcharge);
-				float sur = computeSurcharge(count, marginalCost, nowSurcharge);
+				float sur = computeSurcharge(count1, marginalCost, nowSurcharge);
 				l.setSurcharge(sur);
 			}
 
-			lw.logWriteOther("========================================================");
-			lw.logWriteOther("Outter count: " + count);
-			lw.logWriteLink("After UE assignment, marginalCost computing and Surcharge Computing, the links:");
-
 			count2 = 0;
 			clearPercentage(odList);
-			
+
 			/**
-			 * clear flow
+			 * clear the volume of every link it'll be set later in the step
+			 * "load"
 			 */
 			for (MyLink ml : linkList) {
 				ml.getLink().setFlow(0);
 			}
+
 			do {
 
 				/**
-				 * compute shortest path
+				 * compute shortest path of all OD pairs
 				 */
 				count2++;
-				System.out.println("outter loop:" + count + "; inner loop: "
+				System.out.println("outter loop:" + count1 + "; inner loop: "
 						+ count2);
 				float[][] mat = getTSurchargeMatrix(linkList, maxSize);
 				f.setMatrix(mat);
 				f.compute();
-
-				lw.logWriteOther("Outter count: " + count + ", Inner count: "
-						+ count2);
 
 				/**
 				 * for each OD Pair, find shortest path if it's total cost <
 				 * original cost then load 5% original demand(or something else)
 				 */
 				for (MyODPair modp : odList) {
+					/**
+					 * get the shortest path of the OD pair, then update its
+					 * total cost total_cost = sum_travel_time + sum_surcharge
+					 */
 					ODPair odp = modp.getOdpair();
 					int o = odp.getOrigin();
 					int d = odp.getDestination();
 					float totalCost = f.getTotalCost(o, d);
 					modp.setCost(totalCost);
 
+					if (totalCost < 999999) {
+						lw.logWriteOther("normal cost:" + modp);
+					}
+
 					if (totalCost < modp.getOriginCost()) {
 						/**
-						 * load 0.05f of original demand update link travel time
+						 * load some, like 5% or 1% of original demand and
+						 * update travel_time of every link. then update the
+						 * travel time of every link that composes the shrotest
+						 * path.
 						 */
 						load(demandStep, modp, linkList, f);
-
-						lw.logWriteOther("totalCost=" + totalCost
-								+ ",originCost=" + modp.getOriginCost()
-								+ ",so incremental loading");
-						lw.logWriteOther("load " + modp.getIncrePercent()
-								+ " of " + modp.getOriginDemand());
 					}
 				}
-				
-				lw.logWriteLink("After loading, links:");
 
 				for (MyODPair modp : odList) {
 					updateCost(f, linkList, modp);
 				}
 
 				costflag = 0;
+				num100percent = 0;
 				for (MyODPair modp : odList) {
 					if (modp.getCost() < modp.getOriginCost()) {
 						costflag++;
 					}
-				}
-				
-				if(costflag==0){
-					for(MyODPair modp:odList){
-						lw.logWriteOther("totalCost=" + modp.getCost()
-								+ ",originCost=" + modp.getOriginCost()
-								+ ",so end loading");
+					if (modp.getIncrePercent() >= 1) {
+						num100percent++;
 					}
 				}
 
-			} while (costflag > 0);
+			} while (costflag > 0 & count2 < 1);
 
 			/**
 			 * update demand
@@ -301,16 +298,12 @@ public final class ChangeDemand {
 				modp.setDemand(demand * percentage);
 			}
 
-			lw.logWriteOd("After updating demand, the OD Pairs:");
-
 			surchargeFlag = 0;
 			for (MyLink l : linkList) {
 				surchargeFlag += Math.abs(l.getLastSurcharge()
 						- l.getSurcharge());
 			}
-			lw.logWriteOther("Total surcharge diff: " + surchargeFlag);
-			lw.logWriteOther("========================================================");
-		} while (surchargeFlag > surchargeDiff);
+		} while (surchargeFlag > surchargeDiff & count1 <1);
 
 		lw.logWriteLink("Result links:");
 		lw.logWriteOd("Result OD pairs:");
@@ -352,7 +345,7 @@ public final class ChangeDemand {
 
 	public static void main(String[] args) {
 		ChangeDemand cd = new ChangeDemand();
-		cd.changeDemand(0.05f,10);
+		cd.changeDemand(0.2f, 10);
 		System.out.println("CHANGED DEMAND:");
 		for (MyODPair modp : cd.getODPairList()) {
 			System.out.println(modp.getOdpair());

@@ -31,13 +31,13 @@ public class UE {
 		int n = 1;
 		float step = Float.POSITIVE_INFINITY;
 		while (Math.abs(step) > diff) {
+			System.out.println("count "+n+": diff="+Math.abs(step));
 			ls.updateTMatrix(); // step 1
 			af.allOrNothing(ods, ls);// step 2
 			alpha = af.lineSearch(ls);// step 3
 			float flowsum = ls.getTotalFlow();
 			af.move(ls, alpha);
 			step = ls.getTotalFlow() - flowsum;
-			//System.out.println("decrease of total flow:" + step);
 			n++;
 		}
 		ls.updateTMatrix();
@@ -58,7 +58,9 @@ public class UE {
 //	public static void main(String[] args) {
 //		UE ue = new UE();
 //		ue.init();
+//		System.out.println("start");
 //		ue.compute(50);
+//		System.out.println(ue.getLs());
 //	}
 
 }
