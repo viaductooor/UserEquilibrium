@@ -66,31 +66,6 @@ public class LinkSet {
 		}
 		return mat;
 	}
-	
-	/*public float[][] getTSurchargeMatrix(int n){
-		//compute marginal cost
-		for (Link l : this.getSet()) {
-			l.updateRes();
-			l.updateMarginalCost();	
-		}
-		
-		//calculate link surcharge
-		for(Link l:this.getSet()){
-			float lsc = (1/n)*l.getMarginalCost()+(1-(1/n))*l.getLinkSurcharge();
-			l.setLinkSurchargeLast(l.getLinkSurcharge());
-			l.setLinkSurcharge(lsc);
-		}
-		float[][] mat = new float[maxSize][maxSize];
-		for (int i = 0; i < maxSize; i++) {
-			for (int j = 0; j < maxSize; j++) {
-				mat[i][j] = Float.POSITIVE_INFINITY;
-			}
-		}
-		for (Link l : this.getSet()) {
-			mat[l.getInitNode() - 1][l.getTermNode() - 1] = l.getTravelTime() + l.getLinkSurcharge();
-		}
-		return mat;
-	}*/
 
 	
 	public float[][] getXMatrix() {

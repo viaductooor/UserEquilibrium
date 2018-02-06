@@ -7,6 +7,8 @@ public class Link {
 	private float flow;
 	private float auxFlow;
 	private float travelTime;
+	private float surcharge;
+	private float lastSurcharge;
 
 	public Link(int initNode, int termNode, float capacity, float length,
 			float freeFlowTime) {
@@ -18,6 +20,8 @@ public class Link {
 		this.freeFlowTime = freeFlowTime;
 		this.flow = 0;
 		this.auxFlow = 0;
+		this.surcharge = 0;
+		this.lastSurcharge = 0;
 		updateTravelTime();
 	}
 
@@ -42,8 +46,9 @@ public class Link {
 	}
 
 	public void updateTravelTime() {
-		// 根据当前flow和其他固定属性计算路阻
+		// calculate travelTime based on BPR function
 		this.travelTime = (float) (((Math.pow(this.flow / this.capacity, 4)) * 0.15 + 1) * this.freeFlowTime);
+		this.travelTime += this.surcharge;
 	}
 
 	public float[] getContent() {
@@ -82,12 +87,33 @@ public class Link {
 		this.travelTime = res;
 	}
 
+	public float getSurcharge() {
+		return surcharge;
+	}
+
+	public void setSurcharge(float surcharge) {
+		this.surcharge = surcharge;
+	}
+
+	public float getLastSurcharge() {
+		return lastSurcharge;
+	}
+
+	public void setLastSurcharge(float lastSurcharge) {
+		this.lastSurcharge = lastSurcharge;
+	}
+
 	@Override
 	public String toString() {
-		return "Link [initNode=" + initNode + ", termNode=" + termNode
-				+ ", capacity=" + capacity + ", freeFlowTime=" + freeFlowTime
-				+ ", flow=" + flow + ", travelTime=" + travelTime + "]";
+		return "Link [init=" + initNode + ", term=" + termNode
+				+ ", flow=" + flow + ", travelTime=" + travelTime
+				+ ", surcharge=" + surcharge + ", lastSurcharge="
+				+ lastSurcharge + "]";
 	}
+
+
+
+
 
 
 

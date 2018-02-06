@@ -22,13 +22,7 @@ public class AuxFunctions {
 			}
 		}
 	}
-	public static void increaseBy5(ODPair odp){
-		/*float demand = odp.getDemand();
-		float originDemand = odp.getOdemand();
-		if(demand<originDemand){
-			odp.setDemand((float) (demand+0.05*originDemand));
-		}*/
-	}
+
 
 	public void testAllOrNothing(ODPair odp, LinkSet ls) {
 		ls.clearAuxFlow();
@@ -54,9 +48,10 @@ public class AuxFunctions {
 				float freeFlowTime = l.getFreeFlowTime();
 				float capacity = l.getCapacity();
 				float upper = flow + al * (auxFlow - flow);
+				float surcharge = l.getSurcharge();
 				float C = (float) ((0.03 * freeFlowTime) / Math
 						.pow(capacity, 4));
-				sum += (float) (C * Math.pow(upper, 5) + freeFlowTime * upper);
+				sum += (float) (C * Math.pow(upper, 5) + (freeFlowTime+surcharge) * upper);
 			}
 			if (sum < minSum) {
 				alpha = al;

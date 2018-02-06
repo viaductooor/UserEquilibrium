@@ -9,15 +9,23 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class MyFileReader {
-	private String demand_src = "files/Winnipeg_trips.txt";
-	private String link_src = "files/Winnipeg_net.txt";
+	private String demand_src;
+	private String link_src;
 	private String num_pattern = "\\d+\\.?\\d*";
+	private DataCase dataCase;
+	
+	public MyFileReader(DataCase dc){
+		this.dataCase = dc;
+		this.demand_src = dc.getTripUrl();
+		this.link_src = dc.getNetUrl();
+	}
 
 	public LinkedList<ODPair> getDemand() {
 		LinkedList<ODPair> odps = new LinkedList<ODPair>();
 		BufferedReader br = null;
 		Pattern phead = Pattern.compile("\\D+(\\d+)\\D*");
-		Pattern pitem = Pattern.compile("\\D+(\\d+)\\D+:\\D+(\\d+)\\D+;");
+		//Pattern pitem = Pattern.compile("\\D+(\\d+)\\D+:\\D+(\\d+);");
+		Pattern pitem = Pattern.compile("\\D+(\\d+)\\D+:\\D+(\\d+\\.?\\d*);");
 		try {
 			br = new BufferedReader(new FileReader(demand_src));
 			String str = null;
@@ -31,7 +39,7 @@ public final class MyFileReader {
 				} else if (origin > 0) {
 					Matcher m2 = pitem.matcher(str);
 					while (m2.find()) {
-						int demand = Integer.parseInt(m2.group(2));
+						float demand = Float.parseFloat(m2.group(2));
 						if (demand != 0) {
 							int destination = Integer.parseInt(m2.group(1));
 							ODPair odp = new ODPair(origin, destination, demand);
@@ -57,11 +65,11 @@ public final class MyFileReader {
 			while ((str = br.readLine()) != null) {
 				if (iscontent) {
 					String[] strings = str.split("\\t+");
-					int initNode = Integer.parseInt(strings[1]);
-					int termNode = Integer.parseInt(strings[2]);
-					float capacity = Float.parseFloat(strings[3]);
-					float length = Float.parseFloat(strings[4]);
-					float freeFlowTime = Float.parseFloat(strings[5]);
+					int initNode = Integer.parseInt(strings[0]);
+					int termNode = Integer.parseInt(strings[1]);
+					float capacity = Float.parseFloat(strings[2]);
+					float length = Float.parseFloat(strings[3]);
+					float freeFlowTime = Float.parseFloat(strings[4]);
 					Link link = new Link(initNode, termNode, capacity, length,
 							freeFlowTime);
 					linkset.add(link);
