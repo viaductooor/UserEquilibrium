@@ -1,3 +1,5 @@
+package main;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,14 +29,14 @@ public class LogWriter {
 		this.odList = odList;
 	}
 
-	public LogWriter(List<Link> ll,List<ODPair> ol) {
+	public LogWriter(List<Link> ll, List<ODPair> ol) {
 		this.linkList = ll;
 		this.odList = ol;
 	}
 
-	public void logWriteLink(String header){
+	public void logWriteLink(String header) {
 		try {
-			logWriter.write("\r\n\r\n"+header+"\r\n\r\n");
+			logWriter.write("\r\n\r\n" + header + "\r\n\r\n");
 			for (Link l : linkList) {
 				logWriter.write(l.toString() + "\r\n");
 			}
@@ -43,10 +45,10 @@ public class LogWriter {
 			e.printStackTrace();
 		}
 	}
-	
-	public void logWriteOd(String header){
+
+	public void logWriteOd(String header) {
 		try {
-			logWriter.write("\r\n\r\n"+header+"\r\n\r\n");
+			logWriter.write("\r\n\r\n" + header + "\r\n\r\n");
 			for (ODPair odp : odList) {
 				logWriter.write(odp.toString() + "\r\n");
 			}
@@ -55,15 +57,16 @@ public class LogWriter {
 			e.printStackTrace();
 		}
 	}
-	public void logWriteOther(String content){
+
+	public void logWriteOther(String content) {
 		try {
-			logWriter.write("\r\n\r\n"+content+"\r\n\r\n");
+			logWriter.write("\r\n\r\n" + content + "\r\n\r\n");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void init() {
 		File logFile = new File(logUrl);
 		logWriter = null;
@@ -73,7 +76,6 @@ public class LogWriter {
 			e.printStackTrace();
 		}
 	};
-
 
 	public void close() {
 		try {

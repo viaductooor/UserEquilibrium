@@ -1,3 +1,5 @@
+package main;
+
 public final class ODPair {
 	private int origin;
 	private int destination;
@@ -14,7 +16,8 @@ public final class ODPair {
 		this.originDemand = demand;
 		this.increPercentage = 0;
 	}
-	public ODPair(ODPair odp){
+
+	public ODPair(ODPair odp) {
 		this.origin = odp.origin;
 		this.destination = odp.destination;
 		this.demand = odp.demand;
@@ -28,8 +31,8 @@ public final class ODPair {
 	public int getOrigin() {
 		return this.origin;
 	}
-	
-	public void setDemand(float demand){
+
+	public void setDemand(float demand) {
 		this.demand = demand;
 	}
 
@@ -40,27 +43,35 @@ public final class ODPair {
 	public float getOriginCost() {
 		return originCost;
 	}
+
 	public void setOriginCost(float originCost) {
 		this.originCost = originCost;
 	}
+
 	public float getCost() {
 		return cost;
 	}
+
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
+
 	public float getIncrePercentage() {
 		return increPercentage;
 	}
+
 	public void setIncrePercentage(float increPercentage) {
 		this.increPercentage = increPercentage;
 	}
+
 	public float getOriginDemand() {
 		return originDemand;
 	}
+
 	public void setOriginDemand(float originDemand) {
 		this.originDemand = originDemand;
 	}
+
 	@Override
 	public String toString() {
 		return "ODPair [origin=" + origin + ", destination=" + destination

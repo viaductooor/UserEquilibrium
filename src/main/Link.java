@@ -1,3 +1,5 @@
+package main;
+
 public class Link {
 	private int initNode;
 	private int termNode;
@@ -18,6 +20,7 @@ public class Link {
 		this.capacity = capacity;
 		this.length = length;
 		this.freeFlowTime = freeFlowTime;
+		this.travelTime = 0;
 		this.flow = 0;
 		this.auxFlow = 0;
 		this.surcharge = 0;
@@ -105,17 +108,9 @@ public class Link {
 
 	@Override
 	public String toString() {
-		return "Link [init=" + initNode + ", term=" + termNode
-				+ ", flow=" + flow + ", travelTime=" + travelTime
-				+ ", surcharge=" + surcharge + ", lastSurcharge="
-				+ lastSurcharge + "]";
+		return "Link [init=" + initNode + ", term=" + termNode + ", flow="
+				+ flow + ", travelTime=" + travelTime + ", surcharge="
+				+ surcharge + ", lastSurcharge=" + lastSurcharge + "]";
 	}
-
-
-
-
-
-
-
 
 }
