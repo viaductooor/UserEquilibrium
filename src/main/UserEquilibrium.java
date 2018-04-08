@@ -153,7 +153,7 @@ public class UserEquilibrium {
 		int n = 1;
 		float step = Float.POSITIVE_INFINITY;
 		while (Math.abs(step) > diff) {
-			System.out.println("count " + n + ": diff=" + Math.abs(step));
+			//System.out.println("count " + n + ": diff=" + Math.abs(step));
 			updateTMatrix(mLinks); // step 1
 			allOrNothing(mOdpairs, mLinks);// step 2
 			alpha = lineSearch(mLinks);// step 3
