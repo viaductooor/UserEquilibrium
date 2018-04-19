@@ -153,15 +153,20 @@ public class UserEquilibrium {
 		int n = 1;
 		float step = Float.POSITIVE_INFINITY;
 		while (Math.abs(step) > diff) {
-			//System.out.println("count " + n + ": diff=" + Math.abs(step));
 			updateTMatrix(mLinks); // step 1
 			allOrNothing(mOdpairs, mLinks);// step 2
 			alpha = lineSearch(mLinks);// step 3
 			float flowsum = getTotalFlow(mLinks);
 			move(mLinks, alpha);
-			step = getTotalFlow(mLinks) - flowsum;
+			float totalFlow = getTotalFlow(mLinks);
+			System.out.println(Math.abs(step));
+			step = totalFlow - flowsum;
 			n++;
 		}
 		updateTMatrix(mLinks);
+//		LogWriter lw = new LogWriter(mLinks, mOdpairs);
+//		lw.init();
+//		lw.logWriteLink("UE ASSIGNMENT:");
+//		lw.close();
 	}
 }

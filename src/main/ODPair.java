@@ -8,6 +8,7 @@ public final class ODPair {
 	private float cost;
 	private float increPercentage;
 	private float originDemand;
+	private boolean lock;
 
 	public ODPair(int o, int d, float demand) {
 		this.origin = o;
@@ -15,6 +16,7 @@ public final class ODPair {
 		this.demand = demand;
 		this.originDemand = demand;
 		this.increPercentage = 0;
+		this.lock = false;
 	}
 
 	public ODPair(ODPair odp) {
@@ -22,6 +24,7 @@ public final class ODPair {
 		this.destination = odp.destination;
 		this.demand = odp.demand;
 		this.originDemand = odp.originDemand;
+		this.lock = false;
 	}
 
 	public float getDemand() {
@@ -70,6 +73,14 @@ public final class ODPair {
 
 	public void setOriginDemand(float originDemand) {
 		this.originDemand = originDemand;
+	}
+
+	public boolean isLock() {
+		return lock;
+	}
+
+	public void setLock(boolean lock) {
+		this.lock = lock;
 	}
 
 	@Override
