@@ -1,27 +1,35 @@
 import cx_Oracle as oracle
 import pandas as pd
+import utils
+import datetime
 
-#get connection
-conn = oracle.connect('system/Greenpeace1@localhost:1521/orcl')
+tables = {int(i): 'TR_GPSTRACK_CZC_201408' + i for i in
+          ('05', '06', '07', '12', '13', '14', '19', '20', '26', '27', '28')}
+columns = ('ID', 'DEVICE_ID', 'VEHICLECOLOR', 'ENCRYPT',
+           'DATE_GPS', 'LON', 'LAT', 'DERECTION', 'SPEED_GPS',
+           'SPEED_TRCK', 'ALTITUDE', 'DATE_INSERT', 'GID10',
+           'GID100', 'GID1000', 'ACCESSCODE', 'OLD_LON', 'OLD_LAT',
+           'GPS_TYPE', 'ZHUJIAN')
+table_1 = 'TR_GPSTRACK_0700_0710'
 
-#get distinct taxi ids
+
+def time_range(d):
+    t1 = datetime.datetime(year=2014, month=8, day=d, hour=7, minute=0, second=0)
+    t2 = datetime.datetime(year=2014, month=8, day=d, hour=7, minute=9, second=59)
+    return t1, t2
+
+# get connection
+conn = utils.getConnection()
 cursor = conn.cursor()
-#cursor.execute('SELECT DISTINCT DEVICE_ID FROM TR_GPSTRACK_CZC_20140805')
-#device_id = pd.Series(cursor.fetchall())
-#print(device_id)
-str0 = '渝B1T610'
-str = 'SELECT LON,LAT,DATE_GPS,SPEED_GPS FROM TR_GPSTRACK_CZC_20140805 WHERE DEVICE_ID = \'' + str0+'\''
 
-cursor.execute(str)
-taxi1 = cursor.fetchall()
-df = pd.DataFrame(taxi1)
-
-head = [i[0] for i in cursor.description]
-d = {}
-for i in range(len(head)):
-    d[i] = head[i]
-df2 = df.rename(columns=d)
-print(df2)
+# SELECT and insert
+for key, value in tables.items():
+    time = time_range(key)
+    cursor.prepare('SELECT ID,LON,LAT,SPEED_GPS,STATE,DATE_GPS FROM ' + tables[key] + ' WHERE DATE_GPS BETWEEN :t1 AND :t2')
+    cursor.execute(None, t1=time[0], t2=time[1])
+    rows = cursor.fetchall()
+    cursor.executemany('INSERT INTO ' + table_1 + '(ID,LON,LAT,SPEED_GPS,STATE,DATE_GPS) VALUES(:1,:2,:3,:4,:5,:6)',rows)
 
 cursor.close()
+conn.commit()
 conn.close()
