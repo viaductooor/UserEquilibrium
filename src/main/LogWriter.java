@@ -36,33 +36,32 @@ public class LogWriter {
 
 	public void logWriteLink(String header) {
 		try {
-			logWriter.write("\r\n\r\n" + header + "\r\n\r\n");
+			logWriter.write(header + "\r\n");
 			for (Link l : linkList) {
 				logWriter.write(l.toString() + "\r\n");
 			}
+			logWriter.write("\r\n");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	public void logWriteOd(String header) {
 		try {
-			logWriter.write("\r\n\r\n" + header + "\r\n\r\n");
+			logWriter.write(header + "\r\n");
 			for (ODPair odp : odList) {
 				logWriter.write(odp.toString() + "\r\n");
 			}
+			logWriter.write("\r\n");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	public void logWriteOther(String content) {
 		try {
-			logWriter.write("\r\n\r\n" + content + "\r\n\r\n");
+			logWriter.write("\r\n" + content + "\r\n");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -81,7 +80,6 @@ public class LogWriter {
 		try {
 			logWriter.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

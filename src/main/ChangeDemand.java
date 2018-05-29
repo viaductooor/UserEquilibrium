@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
+import dataset.Anaheim;
 import dataset.FourLinks;
 import dataset.SiouxFalls;
 import dataset.Winnipeg_asym;
@@ -172,8 +175,8 @@ public final class ChangeDemand {
 		LogWriter lw = new LogWriter(mLinks, mOdpairs);
 		lw.init();
 
-		lw.logWriteLink("Original Link:");
-		lw.logWriteOd("Original Trip");
+		// lw.logWriteLink("Original Link:");
+		// lw.logWriteOd("Original Trip");
 
 		init();
 		UserEquilibrium ue = new UserEquilibrium(mDataSet);
@@ -200,9 +203,9 @@ public final class ChangeDemand {
 			}
 
 			count2 = 0;
-			lockcount = 0;
 			clearPercentage(mOdpairs);
 			clearLock(mOdpairs);
+			lockcount = 0;
 
 			/**
 			 * clear the volume of every link which will be set later in the step "load"
@@ -218,6 +221,7 @@ public final class ChangeDemand {
 				 */
 				count2++;
 				System.out.println("outter loop:" + count1 + "; inner loop: " + count2);
+
 				float[][] mat = getTravelTimeMatrix(mLinks, maxSize);
 				f.setMatrix(mat);
 				f.compute();
@@ -236,17 +240,18 @@ public final class ChangeDemand {
 					float totalCost = f.getTotalCost(o, d);
 					odp.setCost(totalCost);
 
-					if (totalCost > odp.getOriginCost() | odp.getIncrePercentage() >= 1) {
-						odp.setLock(true);
-						lockcount++;
-					}
-					if (odp.isLock() == false) {
+					if(!odp.isLock()) {
 						/**
 						 * load some, like 5% or 1% of original demand and update travel_time of every
 						 * link. then update the travel time of every link that composes the shrotest
 						 * path.
 						 */
 						load(demandStep, odp, mLinks, f);
+						
+						if (totalCost > odp.getOriginCost() | odp.getIncrePercentage() >= 1) {
+							odp.setLock(true);
+							lockcount++;
+						}
 					}
 				}
 
@@ -256,8 +261,11 @@ public final class ChangeDemand {
 				for (ODPair odp : mOdpairs) {
 					updateCost(f, mLinks, odp);
 				}
-			
-			} while (lockcount < mOdpairs.size());
+
+				// lw.logWriteOther("outter loop:" + count1 + "; inner loop: " + count2);
+				// lw.logWriteLink("");
+				// lw.logWriteOd("");
+			} while (lockcount<mOdpairs.size());
 
 			/**
 			 * update demand
@@ -272,8 +280,13 @@ public final class ChangeDemand {
 			diff = ChangeDemand.getSuchargeDiff(mLinks);
 			System.out.println("surcharge diff:" + diff);
 			lw.logWriteOther("surcharge diff:" + diff);
-			// lw.logWriteLink("Links:");
-			// lw.logWriteOd("ODPairs:");
+			
+			int temp = 0;
+			for(ODPair odp:mOdpairs) {
+				temp++;
+			}
+			System.out.println("ODPair amount:"+temp);
+
 		} while (diff > surchargeDiff);
 
 		for (Link l : mLinks) {
@@ -290,9 +303,9 @@ public final class ChangeDemand {
 			odp.setIncrePercentage(0);
 		}
 	}
-	
+
 	public static void clearLock(List<ODPair> odl) {
-		for(ODPair odp:odl) {
+		for (ODPair odp : odl) {
 			odp.setLock(false);
 		}
 	}
@@ -370,15 +383,29 @@ public final class ChangeDemand {
 		lw.logWriteOther("origin total cost: " + originCost + ", opt total cost: " + optCost);
 		lw.close();
 	}
+	
+	public boolean isAllLocked(List<ODPair> odps) {
+		for(ODPair odp:odps) {
+			if(odp.isLock()==false) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	public static void main(String[] a) {
 		long startTime = System.currentTimeMillis();
-		DataSet dataSet = new SiouxFalls();
+		DataSet dataSet = new Anaheim();
 		ChangeDemand cd = new ChangeDemand(dataSet);
-		cd.setUediff(50);
-		cd.changeDemand(0.01f, 5);
+		cd.setUediff(10);
+		LogWriter lw = new LogWriter(dataSet.getLinks(), dataSet.getOdpairs());
+		lw.init();
+		cd.changeDemand(0.01f, 20f);
+		lw.logWriteLink("LINKS:");
+		lw.logWriteOd("ODPairs:");
+		lw.close();
 		long finishTime = System.currentTimeMillis();
-		System.out.println("Time: " + (finishTime - startTime) / 1000);
+		System.out.println("Time: " + (finishTime - startTime) / 1000+"s");
 	}
 
 }
