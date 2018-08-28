@@ -3,85 +3,162 @@
 Original Link:
 
 Link [init=1, term=2, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=1, term=3, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=2, term=1, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=2, term=6, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=3, term=1, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=3, term=4, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=3, term=12, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=4, term=3, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=4, term=5, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=4, term=11, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=5, term=4, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=5, term=6, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=5, term=9, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=6, term=2, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=6, term=5, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=6, term=8, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=7, term=8, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=7, term=18, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=8, term=6, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=8, term=7, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=8, term=9, flow=0.0, travelTime=10.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=8, term=16, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=9, term=5, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=9, term=8, flow=0.0, travelTime=10.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=9, term=10, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=10, term=9, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=10, term=11, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=10, term=15, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=10, term=16, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=10, term=17, flow=0.0, travelTime=8.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=11, term=4, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=11, term=10, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=11, term=12, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=11, term=14, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=12, term=3, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=12, term=11, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=12, term=13, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=13, term=12, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=13, term=24, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=14, term=11, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=14, term=15, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=14, term=23, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=15, term=10, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=15, term=14, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=15, term=19, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=15, term=22, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=16, term=8, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=16, term=10, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=16, term=17, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=16, term=18, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=17, term=10, flow=0.0, travelTime=8.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=17, term=16, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=17, term=19, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=18, term=7, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=18, term=16, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=18, term=20, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=19, term=15, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=19, term=17, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=19, term=20, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=20, term=18, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=20, term=19, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=20, term=21, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=20, term=22, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=21, term=20, flow=0.0, travelTime=6.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=21, term=22, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=21, term=24, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=22, term=15, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=22, term=20, flow=0.0, travelTime=5.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=22, term=21, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=22, term=23, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=23, term=14, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=23, term=22, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=23, term=24, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=24, term=13, flow=0.0, travelTime=4.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=24, term=21, flow=0.0, travelTime=3.0, surcharge=0.0, lastSurcharge=0.0]
+
 Link [init=24, term=23, flow=0.0, travelTime=2.0, surcharge=0.0, lastSurcharge=0.0]
+
 
 
 Original Trip
 
+ODPair [origin=1, destination=1, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=1, destination=2, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=1, destination=3, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=1, destination=4, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -106,6 +183,7 @@ ODPair [origin=1, destination=22, demand=400.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=1, destination=23, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=1, destination=24, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=1, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=2, destination=2, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=3, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=4, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=5, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -121,11 +199,16 @@ ODPair [origin=2, destination=14, demand=100.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=2, destination=15, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=16, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=17, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=2, destination=18, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=19, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=20, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=2, destination=21, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=2, destination=22, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=2, destination=23, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=2, destination=24, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=1, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=2, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=3, destination=3, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=4, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=5, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=6, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -140,11 +223,17 @@ ODPair [origin=3, destination=14, demand=100.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=3, destination=15, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=16, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=17, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=3, destination=18, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=3, destination=19, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=3, destination=20, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=3, destination=21, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=22, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=3, destination=23, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=3, destination=24, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=4, destination=1, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=4, destination=2, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=4, destination=3, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=4, destination=4, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=4, destination=5, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=4, destination=6, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=4, destination=7, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -169,6 +258,7 @@ ODPair [origin=5, destination=1, demand=200.0, originCost=0.0, cost=0.0, increPe
 ODPair [origin=5, destination=2, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=3, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=4, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=5, destination=5, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=6, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=7, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=8, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -181,16 +271,19 @@ ODPair [origin=5, destination=14, demand=100.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=5, destination=15, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=16, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=17, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=5, destination=18, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=19, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=20, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=21, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=22, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=5, destination=23, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=5, destination=24, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=1, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=2, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=3, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=4, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=5, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=6, destination=6, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=7, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=8, demand=800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=6, destination=9, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -215,6 +308,7 @@ ODPair [origin=7, destination=3, demand=100.0, originCost=0.0, cost=0.0, increPe
 ODPair [origin=7, destination=4, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=7, destination=5, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=7, destination=6, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=7, destination=7, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=7, destination=8, demand=1000.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=7, destination=9, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=7, destination=10, demand=1900.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -239,6 +333,7 @@ ODPair [origin=8, destination=4, demand=700.0, originCost=0.0, cost=0.0, increPe
 ODPair [origin=8, destination=5, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=8, destination=6, demand=800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=8, destination=7, demand=1000.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=8, destination=8, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=8, destination=9, demand=800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=8, destination=10, demand=1600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=8, destination=11, demand=800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -263,6 +358,7 @@ ODPair [origin=9, destination=5, demand=800.0, originCost=0.0, cost=0.0, increPe
 ODPair [origin=9, destination=6, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=9, destination=7, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=9, destination=8, demand=800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=9, destination=9, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=9, destination=10, demand=2800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=9, destination=11, demand=1400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=9, destination=12, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -287,6 +383,7 @@ ODPair [origin=10, destination=6, demand=800.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=10, destination=7, demand=1900.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=10, destination=8, demand=1600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=10, destination=9, demand=2800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=10, destination=10, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=10, destination=11, demand=4000.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=10, destination=12, demand=2000.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=10, destination=13, demand=1900.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -311,6 +408,7 @@ ODPair [origin=11, destination=7, demand=500.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=11, destination=8, demand=800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=11, destination=9, demand=1400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=11, destination=10, demand=3900.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=11, destination=11, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=11, destination=12, demand=1400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=11, destination=13, demand=1000.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=11, destination=14, demand=1600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -335,6 +433,7 @@ ODPair [origin=12, destination=8, demand=600.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=12, destination=9, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=12, destination=10, demand=2000.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=12, destination=11, demand=1400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=12, destination=12, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=12, destination=13, demand=1300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=12, destination=14, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=12, destination=15, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -359,6 +458,7 @@ ODPair [origin=13, destination=9, demand=600.0, originCost=0.0, cost=0.0, increP
 ODPair [origin=13, destination=10, demand=1900.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=13, destination=11, demand=1000.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=13, destination=12, demand=1300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=13, destination=13, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=13, destination=14, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=13, destination=15, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=13, destination=16, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -383,6 +483,7 @@ ODPair [origin=14, destination=10, demand=2100.0, originCost=0.0, cost=0.0, incr
 ODPair [origin=14, destination=11, demand=1600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=14, destination=12, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=14, destination=13, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=14, destination=14, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=14, destination=15, demand=1300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=14, destination=16, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=14, destination=17, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -407,6 +508,7 @@ ODPair [origin=15, destination=11, demand=1400.0, originCost=0.0, cost=0.0, incr
 ODPair [origin=15, destination=12, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=15, destination=13, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=15, destination=14, demand=1300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=15, destination=15, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=15, destination=16, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=15, destination=17, demand=1500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=15, destination=18, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -431,6 +533,7 @@ ODPair [origin=16, destination=12, demand=700.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=16, destination=13, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=16, destination=14, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=16, destination=15, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=16, destination=16, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=16, destination=17, demand=2800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=16, destination=18, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=16, destination=19, demand=1300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -455,6 +558,7 @@ ODPair [origin=17, destination=13, demand=500.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=17, destination=14, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=17, destination=15, demand=1500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=17, destination=16, demand=2800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=17, destination=17, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=17, destination=18, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=17, destination=19, demand=1700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=17, destination=20, demand=1700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -463,7 +567,10 @@ ODPair [origin=17, destination=22, demand=1700.0, originCost=0.0, cost=0.0, incr
 ODPair [origin=17, destination=23, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=17, destination=24, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=1, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=18, destination=2, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=18, destination=3, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=4, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=18, destination=5, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=6, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=7, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=8, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -476,13 +583,16 @@ ODPair [origin=18, destination=14, demand=100.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=18, destination=15, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=16, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=17, demand=600.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=18, destination=18, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=19, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=20, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=21, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=22, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=18, destination=23, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=18, destination=24, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=1, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=2, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=19, destination=3, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=4, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=5, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=6, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -498,6 +608,7 @@ ODPair [origin=19, destination=15, demand=800.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=19, destination=16, demand=1300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=17, demand=1700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=18, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=19, destination=19, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=20, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=21, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=19, destination=22, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -505,6 +616,7 @@ ODPair [origin=19, destination=23, demand=300.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=19, destination=24, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=1, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=2, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=20, destination=3, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=4, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=5, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=6, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -521,11 +633,14 @@ ODPair [origin=20, destination=16, demand=1600.0, originCost=0.0, cost=0.0, incr
 ODPair [origin=20, destination=17, demand=1700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=18, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=19, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=20, destination=20, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=21, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=22, demand=2400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=23, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=20, destination=24, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=1, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=21, destination=2, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=21, destination=3, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=4, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=5, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=6, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -543,6 +658,7 @@ ODPair [origin=21, destination=17, demand=600.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=21, destination=18, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=19, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=20, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=21, destination=21, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=22, demand=1800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=23, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=21, destination=24, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -567,9 +683,11 @@ ODPair [origin=22, destination=18, demand=300.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=22, destination=19, demand=1200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=22, destination=20, demand=2400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=22, destination=21, demand=1800.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=22, destination=22, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=22, destination=23, demand=2100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=22, destination=24, demand=1100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=23, destination=1, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=23, destination=2, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=23, destination=3, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=23, destination=4, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=23, destination=5, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -590,9 +708,13 @@ ODPair [origin=23, destination=19, demand=300.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=23, destination=20, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=23, destination=21, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=23, destination=22, demand=2100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=23, destination=23, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=23, destination=24, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=1, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=24, destination=2, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=24, destination=3, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=4, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=24, destination=5, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=6, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=7, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=8, demand=200.0, originCost=0.0, cost=0.0, increPercentage=0.0]
@@ -605,11 +727,13 @@ ODPair [origin=24, destination=14, demand=400.0, originCost=0.0, cost=0.0, incre
 ODPair [origin=24, destination=15, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=16, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=17, demand=300.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=24, destination=18, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=19, demand=100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=20, demand=400.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=21, demand=500.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=22, demand=1100.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 ODPair [origin=24, destination=23, demand=700.0, originCost=0.0, cost=0.0, increPercentage=0.0]
+ODPair [origin=24, destination=24, demand=0.0, originCost=0.0, cost=0.0, increPercentage=0.0]
 
 
 surcharge diff:1421.954
@@ -639,85 +763,162 @@ surcharge diff:2.19851
 Result links:
 
 Link [init=1, term=2, flow=2633.0, travelTime=6.0000963, surcharge=6.4283476E-4, lastSurcharge=6.5848004E-4]
+
 Link [init=1, term=3, flow=5042.0, travelTime=4.0012927, surcharge=0.006819064, lastSurcharge=0.006984635]
+
 Link [init=2, term=1, flow=2603.0, travelTime=6.000092, surcharge=6.412264E-4, lastSurcharge=6.720706E-4]
+
 Link [init=2, term=6, flow=3833.0, travelTime=5.267872, surcharge=1.2681563, lastSurcharge=1.2673212]
+
 Link [init=3, term=1, flow=5067.0, travelTime=4.0013185, surcharge=0.006836052, lastSurcharge=0.006905706]
+
 Link [init=3, term=4, flow=9463.0, travelTime=4.0561323, surcharge=0.22467482, lastSurcharge=0.2246262]
+
 Link [init=3, term=12, flow=6465.0, travelTime=4.003494, surcharge=0.017184097, lastSurcharge=0.01761756]
+
 Link [init=4, term=3, flow=9411.0, travelTime=4.0549088, surcharge=0.22599304, lastSurcharge=0.2269244]
+
 Link [init=4, term=5, flow=12139.0, travelTime=2.0651407, surcharge=0.26006716, lastSurcharge=0.26021376]
+
 Link [init=4, term=11, flow=3509.0, travelTime=6.2349987, surcharge=0.9841529, lastSurcharge=0.9712209]
+
 Link [init=5, term=4, flow=12018.0, travelTime=2.062582, surcharge=0.26002565, lastSurcharge=0.26138055]
+
 Link [init=5, term=6, flow=6023.0, travelTime=5.317303, surcharge=4.7752395, lastSurcharge=4.713356]
+
 Link [init=5, term=9, flow=10683.0, travelTime=5.9768643, surcharge=3.8075957, lastSurcharge=3.8203058]
+
 Link [init=6, term=2, flow=3808.0, travelTime=5.260951, surcharge=1.2638988, lastSurcharge=1.286992]
+
 Link [init=6, term=5, flow=5976.0, travelTime=5.276664, surcharge=4.776185, lastSurcharge=4.753528]
+
 Link [init=6, term=8, flow=8259.0, travelTime=4.4240837, surcharge=10.234291, lastSurcharge=10.099772]
+
 Link [init=7, term=8, flow=7885.0, travelTime=3.4599957, surcharge=2.0491667, lastSurcharge=2.0628433]
+
 Link [init=7, term=18, flow=10197.0, travelTime=2.0108116, surcharge=0.05037682, lastSurcharge=0.050454136]
+
 Link [init=8, term=6, flow=8254.0, travelTime=4.4182186, surcharge=10.274593, lastSurcharge=10.235346]
+
 Link [init=8, term=7, flow=7821.0, travelTime=3.445242, surcharge=2.036387, lastSurcharge=2.0356598]
+
 Link [init=8, term=9, flow=4378.0, travelTime=10.847154, surcharge=4.102969, lastSurcharge=4.11999]
+
 Link [init=8, term=16, flow=5473.0, travelTime=6.0380898, surcharge=4.4866695, lastSurcharge=4.4594555]
+
 Link [init=9, term=5, flow=10582.0, travelTime=5.9404426, surcharge=3.7964005, lastSurcharge=3.821947]
+
 Link [init=9, term=8, flow=4357.0, travelTime=10.831017, surcharge=4.056727, lastSurcharge=4.0868235]
+
 Link [init=9, term=10, flow=15121.0, travelTime=3.6273406, surcharge=2.1685688, lastSurcharge=2.1662028]
+
 Link [init=10, term=9, flow=15062.0, travelTime=3.6176064, surcharge=2.196285, lastSurcharge=2.2013314]
+
 Link [init=10, term=11, flow=11768.0, travelTime=6.438375, surcharge=5.9391427, lastSurcharge=5.9562798]
+
 Link [init=10, term=15, flow=15415.0, travelTime=7.524536, surcharge=6.210656, lastSurcharge=6.2153773]
+
 Link [init=10, term=16, flow=7616.0, travelTime=7.6335545, surcharge=12.807798, lastSurcharge=12.873305]
+
 Link [init=10, term=17, flow=5458.0, travelTime=9.712739, surcharge=6.700385, lastSurcharge=6.6193705]
+
 Link [init=11, term=4, flow=3596.0, travelTime=6.2591853, surcharge=1.0678169, lastSurcharge=1.0590569]
+
 Link [init=11, term=10, flow=11662.0, travelTime=6.387246, surcharge=5.7749643, lastSurcharge=5.80382]
+
 Link [init=11, term=12, flow=5718.0, travelTime=7.656945, surcharge=6.088565, lastSurcharge=6.0520687]
+
 Link [init=11, term=14, flow=6701.0, travelTime=6.139311, surcharge=7.8204174, lastSurcharge=7.807877]
+
 Link [init=12, term=3, flow=6518.0, travelTime=4.0036097, surcharge=0.017026156, lastSurcharge=0.01721431]
+
 Link [init=12, term=11, flow=5792.0, travelTime=7.744399, surcharge=6.2736616, lastSurcharge=6.156103]
+
 Link [init=12, term=13, flow=8144.0, travelTime=3.004399, surcharge=0.019135108, lastSurcharge=0.019333383]
+
 Link [init=13, term=12, flow=8266.0, travelTime=3.0046685, surcharge=0.019828226, lastSurcharge=0.019812692]
+
 Link [init=13, term=24, flow=7449.0, travelTime=6.7494345, surcharge=10.787942, lastSurcharge=10.849364]
+
 Link [init=14, term=11, flow=6717.0, travelTime=6.159816, surcharge=7.956641, lastSurcharge=8.018427]
+
 Link [init=14, term=15, flow=6179.0, travelTime=6.5816216, surcharge=5.78243, lastSurcharge=5.819735]
+
 Link [init=14, term=23, flow=5623.0, travelTime=5.0196996, surcharge=4.0105987, lastSurcharge=4.0779495]
+
 Link [init=15, term=10, flow=15386.0, travelTime=7.513097, surcharge=6.280796, lastSurcharge=6.2789626]
+
 Link [init=15, term=14, flow=6204.0, travelTime=6.607374, surcharge=5.9231663, lastSurcharge=6.0184045]
+
 Link [init=15, term=19, flow=12682.0, travelTime=3.2586727, surcharge=1.0432404, lastSurcharge=1.0670923]
+
 Link [init=15, term=22, flow=12446.0, travelTime=4.2717304, surcharge=4.774269, lastSurcharge=4.7614737]
+
 Link [init=16, term=8, flow=5475.0, travelTime=6.0396085, surcharge=4.551643, lastSurcharge=4.4924574]
+
 Link [init=16, term=10, flow=7628.0, travelTime=7.6565094, surcharge=12.919121, lastSurcharge=13.057584]
+
 Link [init=16, term=17, flow=7139.0, travelTime=3.041583, surcharge=5.8137245, lastSurcharge=5.856914]
+
 Link [init=16, term=18, flow=9086.0, travelTime=3.020446, surcharge=0.13091628, lastSurcharge=0.13295062]
+
 Link [init=17, term=10, flow=5497.0, travelTime=9.762221, surcharge=6.702363, lastSurcharge=6.6330614]
+
 Link [init=17, term=16, flow=7155.0, travelTime=3.0509515, surcharge=5.7956786, lastSurcharge=5.8526444]
+
 Link [init=17, term=19, flow=7139.0, travelTime=3.4389954, surcharge=4.2715607, lastSurcharge=4.3244014]
+
 Link [init=18, term=7, flow=10239.0, travelTime=2.0109909, surcharge=0.05059735, lastSurcharge=0.050967544]
+
 Link [init=18, term=16, flow=9118.0, travelTime=3.0207357, surcharge=0.1338642, lastSurcharge=0.13493136]
+
 Link [init=18, term=20, flow=12121.0, travelTime=4.04317, surcharge=0.21104026, lastSurcharge=0.21109572]
+
 Link [init=19, term=15, flow=12697.0, travelTime=3.259899, surcharge=1.0472739, lastSurcharge=1.0733519]
+
 Link [init=19, term=17, flow=7197.0, travelTime=3.486332, surcharge=4.2840204, lastSurcharge=4.327994]
+
 Link [init=19, term=20, flow=6119.0, travelTime=5.343035, surcharge=4.276397, lastSurcharge=4.3137984]
+
 Link [init=20, term=18, flow=12116.0, travelTime=4.043099, surcharge=0.21111959, lastSurcharge=0.21096203]
+
 Link [init=20, term=19, flow=6187.0, travelTime=5.4037375, surcharge=4.314299, lastSurcharge=4.3739247]
+
 Link [init=20, term=21, flow=4032.0, travelTime=6.3628716, surcharge=1.7325501, lastSurcharge=1.7289326]
+
 Link [init=20, term=22, flow=4760.0, travelTime=5.5801044, surcharge=2.2745905, lastSurcharge=2.2431903]
+
 Link [init=21, term=20, flow=3991.0, travelTime=6.348335, surcharge=1.6776794, lastSurcharge=1.6772795]
+
 Link [init=21, term=22, flow=5877.0, travelTime=2.4783735, surcharge=1.7618123, lastSurcharge=1.7593063]
+
 Link [init=21, term=24, flow=6869.0, travelTime=4.7587385, surcharge=7.02505, lastSurcharge=7.0092583]
+
 Link [init=22, term=15, flow=12338.0, travelTime=4.2281594, surcharge=4.765348, lastSurcharge=4.769089]
+
 Link [init=22, term=20, flow=4723.0, travelTime=5.562277, surcharge=2.2244418, lastSurcharge=2.2110696]
+
 Link [init=22, term=21, flow=5904.0, travelTime=2.487225, surcharge=1.7591122, lastSurcharge=1.7448313]
+
 Link [init=22, term=23, flow=6580.0, travelTime=5.799595, surcharge=6.6913776, lastSurcharge=6.570418]
+
 Link [init=23, term=14, flow=5651.0, travelTime=5.0401635, surcharge=3.9871001, lastSurcharge=4.0568595]
+
 Link [init=23, term=22, flow=6505.0, travelTime=5.718939, surcharge=6.525221, lastSurcharge=6.4730086]
+
 Link [init=23, term=24, flow=5160.0, travelTime=2.319724, surcharge=1.354202, lastSurcharge=1.3988719]
+
 Link [init=24, term=13, flow=7446.0, travelTime=6.7450075, surcharge=10.751456, lastSurcharge=10.758029]
+
 Link [init=24, term=21, flow=6795.0, travelTime=4.684167, surcharge=6.912301, lastSurcharge=6.928131]
+
 Link [init=24, term=23, flow=5189.0, travelTime=2.3269725, surcharge=1.320756, lastSurcharge=1.3660226]
+
 
 
 Result OD pairs:
 
+ODPair [origin=1, destination=1, demand=0.0, originCost=8.017862, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=1, destination=2, demand=67.99996, originCost=6.000894, cost=6.000739, increPercentage=0.67999965]
 ODPair [origin=1, destination=3, demand=67.99996, originCost=4.008853, cost=4.008112, increPercentage=0.67999965]
 ODPair [origin=1, destination=4, demand=339.99982, originCost=8.297367, cost=8.288919, increPercentage=0.67999965]
@@ -742,6 +943,7 @@ ODPair [origin=1, destination=22, demand=259.99988, originCost=44.089127, cost=4
 ODPair [origin=1, destination=23, demand=203.9999, originCost=32.324284, cost=32.237427, increPercentage=0.67999965]
 ODPair [origin=1, destination=24, demand=67.99996, originCost=28.569387, cost=28.589699, increPercentage=0.67999965]
 ODPair [origin=2, destination=1, demand=67.99996, originCost=6.0008664, cost=6.0007334, increPercentage=0.67999965]
+ODPair [origin=2, destination=2, demand=0.0, originCost=12.0017605, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=2, destination=3, demand=67.99996, originCost=10.00972, cost=10.008845, increPercentage=0.67999965]
 ODPair [origin=2, destination=4, demand=135.99992, originCost=14.298234, cost=14.289652, increPercentage=0.67999965]
 ODPair [origin=2, destination=5, demand=60.999973, originCost=16.370926, cost=16.588877, increPercentage=0.6099997]
@@ -757,11 +959,16 @@ ODPair [origin=2, destination=14, demand=67.99996, originCost=35.440575, cost=35
 ODPair [origin=2, destination=15, demand=66.99997, originCost=45.657623, cost=45.904438, increPercentage=0.66999966]
 ODPair [origin=2, destination=16, demand=271.99985, originCost=31.847507, cost=31.719162, increPercentage=0.67999965]
 ODPair [origin=2, destination=17, demand=135.99992, originCost=40.9915, cost=40.57447, increPercentage=0.67999965]
+ODPair [origin=2, destination=18, demand=0.0, originCost=29.180752, cost=28.737219, increPercentage=0.67999965]
 ODPair [origin=2, destination=19, demand=67.99996, originCost=42.973465, cost=42.709465, increPercentage=0.67999965]
 ODPair [origin=2, destination=20, demand=67.99996, originCost=33.450813, cost=32.99143, increPercentage=0.67999965]
+ODPair [origin=2, destination=21, demand=0.0, originCost=41.627296, cost=41.08685, increPercentage=0.67999965]
 ODPair [origin=2, destination=22, demand=67.99996, originCost=41.34087, cost=40.846123, increPercentage=0.67999965]
+ODPair [origin=2, destination=23, demand=0.0, originCost=38.325153, cost=38.238163, increPercentage=0.67999965]
+ODPair [origin=2, destination=24, demand=0.0, originCost=34.570255, cost=34.590435, increPercentage=0.67999965]
 ODPair [origin=3, destination=1, demand=67.99996, originCost=4.0090094, cost=4.0081544, increPercentage=0.67999965]
 ODPair [origin=3, destination=2, demand=67.99996, originCost=10.009903, cost=10.008894, increPercentage=0.67999965]
+ODPair [origin=3, destination=3, demand=0.0, originCost=8.017862, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=3, destination=4, demand=135.99992, originCost=4.288514, cost=4.280807, increPercentage=0.67999965]
 ODPair [origin=3, destination=5, demand=67.99996, originCost=6.6226125, cost=6.606015, increPercentage=0.67999965]
 ODPair [origin=3, destination=6, demand=188.99991, originCost=16.445879, cost=16.544922, increPercentage=0.6299997]
@@ -776,11 +983,17 @@ ODPair [origin=3, destination=14, demand=67.99996, originCost=25.430857, cost=25
 ODPair [origin=3, destination=15, demand=67.99996, originCost=35.90931, cost=35.921577, increPercentage=0.67999965]
 ODPair [origin=3, destination=16, demand=135.99992, originCost=41.626743, cost=41.80298, increPercentage=0.67999965]
 ODPair [origin=3, destination=17, demand=67.99996, originCost=38.454865, cost=38.59951, increPercentage=0.67999965]
+ODPair [origin=3, destination=18, demand=0.0, originCost=38.959984, cost=38.821037, increPercentage=0.67999965]
+ODPair [origin=3, destination=19, demand=0.0, originCost=40.236767, cost=40.22349, increPercentage=0.67999965]
+ODPair [origin=3, destination=20, demand=0.0, originCost=43.230045, cost=43.07525, increPercentage=0.67999965]
+ODPair [origin=3, destination=21, demand=0.0, originCost=35.890133, cost=36.178055, increPercentage=0.65999967]
 ODPair [origin=3, destination=22, demand=64.99997, originCost=40.080273, cost=40.41824, increPercentage=0.6499997]
 ODPair [origin=3, destination=23, demand=67.99996, originCost=28.315434, cost=28.229317, increPercentage=0.67999965]
+ODPair [origin=3, destination=24, demand=0.0, originCost=24.560535, cost=24.581589, increPercentage=0.67999965]
 ODPair [origin=4, destination=1, demand=339.99982, originCost=8.306319, cost=8.289057, increPercentage=0.67999965]
 ODPair [origin=4, destination=2, demand=135.99992, originCost=14.307213, cost=14.289796, increPercentage=0.67999965]
 ODPair [origin=4, destination=3, demand=135.99992, originCost=4.29731, cost=4.280902, increPercentage=0.67999965]
+ODPair [origin=4, destination=4, demand=0.0, originCost=4.6724133, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=4, destination=5, demand=339.99982, originCost=2.3340983, cost=2.325208, increPercentage=0.67999965]
 ODPair [origin=4, destination=6, demand=231.9999, originCost=12.157366, cost=12.41775, increPercentage=0.57999974]
 ODPair [origin=4, destination=7, demand=271.99985, originCost=32.610477, cost=32.47904, increPercentage=0.67999965]
@@ -805,6 +1018,7 @@ ODPair [origin=5, destination=1, demand=135.99992, originCost=10.644634, cost=10
 ODPair [origin=5, destination=2, demand=62.99997, originCost=16.405907, cost=16.617393, increPercentage=0.6299997]
 ODPair [origin=5, destination=3, demand=67.99996, originCost=6.635625, cost=6.60351, increPercentage=0.67999965]
 ODPair [origin=5, destination=4, demand=339.99982, originCost=2.338315, cost=2.3226078, increPercentage=0.67999965]
+ODPair [origin=5, destination=5, demand=0.0, originCost=4.6724133, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=5, destination=6, demand=111.999954, originCost=9.823267, cost=10.092543, increPercentage=0.55999976]
 ODPair [origin=5, destination=7, demand=135.99992, originCost=30.276379, cost=30.153831, increPercentage=0.67999965]
 ODPair [origin=5, destination=8, demand=339.99982, originCost=24.657825, cost=24.672203, increPercentage=0.67999965]
@@ -817,16 +1031,19 @@ ODPair [origin=5, destination=14, demand=67.99996, originCost=23.480658, cost=23
 ODPair [origin=5, destination=15, demand=135.99992, originCost=29.286697, cost=29.315563, increPercentage=0.67999965]
 ODPair [origin=5, destination=16, demand=339.99982, originCost=35.00413, cost=35.19696, increPercentage=0.67999965]
 ODPair [origin=5, destination=17, demand=133.99994, originCost=31.832249, cost=31.993494, increPercentage=0.66999966]
+ODPair [origin=5, destination=18, demand=0.0, originCost=32.33737, cost=32.21502, increPercentage=0.67999965]
 ODPair [origin=5, destination=19, demand=67.99996, originCost=33.614155, cost=33.617477, increPercentage=0.67999965]
 ODPair [origin=5, destination=20, demand=67.99996, originCost=36.607433, cost=36.46923, increPercentage=0.67999965]
 ODPair [origin=5, destination=21, demand=67.99996, originCost=42.409607, cost=42.607903, increPercentage=0.67999965]
 ODPair [origin=5, destination=22, demand=135.99992, originCost=38.229916, cost=38.361565, increPercentage=0.67999965]
 ODPair [origin=5, destination=23, demand=67.99996, originCost=32.51118, cost=32.531784, increPercentage=0.67999965]
+ODPair [origin=5, destination=24, demand=0.0, originCost=31.19616, cost=31.185097, increPercentage=0.67999965]
 ODPair [origin=6, destination=1, demand=203.9999, originCost=12.583506, cost=12.525583, increPercentage=0.67999965]
 ODPair [origin=6, destination=2, demand=271.99985, originCost=6.5826397, cost=6.52485, increPercentage=0.67999965]
 ODPair [origin=6, destination=3, demand=173.99992, originCost=16.38564, cost=16.533695, increPercentage=0.57999974]
 ODPair [origin=6, destination=4, demand=219.99991, originCost=12.088329, cost=12.375457, increPercentage=0.5499998]
 ODPair [origin=6, destination=5, demand=107.999954, originCost=9.750014, cost=10.052849, increPercentage=0.5399998]
+ODPair [origin=6, destination=6, demand=0.0, originCost=13.20355, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=6, destination=7, demand=271.99985, originCost=20.498846, cost=20.140003, increPercentage=0.67999965]
 ODPair [origin=6, destination=8, demand=543.9997, originCost=14.880293, cost=14.658375, increPercentage=0.67999965]
 ODPair [origin=6, destination=9, demand=255.99988, originCost=19.509754, cost=19.837309, increPercentage=0.6399997]
@@ -851,6 +1068,7 @@ ODPair [origin=7, destination=3, demand=66.99997, originCost=36.639698, cost=36.
 ODPair [origin=7, destination=4, demand=267.99988, originCost=32.34239, cost=32.518738, increPercentage=0.66999966]
 ODPair [origin=7, destination=5, demand=133.99994, originCost=30.004074, cost=30.196129, increPercentage=0.66999966]
 ODPair [origin=7, destination=6, demand=271.99985, originCost=20.254059, cost=20.201975, increPercentage=0.67999965]
+ODPair [origin=7, destination=7, demand=0.0, originCost=4.1222353, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=7, destination=8, demand=679.99963, originCost=5.632286, cost=5.5091624, increPercentage=0.67999965]
 ODPair [origin=7, destination=9, demand=407.9998, originCost=20.893694, cost=20.459286, increPercentage=0.67999965]
 ODPair [origin=7, destination=10, demand=1196.9994, originCost=25.612625, cost=25.791418, increPercentage=0.6299997]
@@ -875,6 +1093,7 @@ ODPair [origin=8, destination=4, demand=461.99976, originCost=26.710102, cost=27
 ODPair [origin=8, destination=5, demand=329.99985, originCost=24.371788, cost=24.686966, increPercentage=0.65999967]
 ODPair [origin=8, destination=6, demand=535.99976, originCost=14.621774, cost=14.692812, increPercentage=0.66999966]
 ODPair [origin=8, destination=7, demand=679.99963, originCost=5.618553, cost=5.481629, increPercentage=0.67999965]
+ODPair [origin=8, destination=8, demand=0.0, originCost=11.250839, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=8, destination=9, demand=543.9997, originCost=15.261408, cost=14.950123, increPercentage=0.67999965]
 ODPair [origin=8, destination=10, demand=1087.9994, originCost=20.999651, cost=20.746033, increPercentage=0.67999965]
 ODPair [origin=8, destination=11, demand=543.9997, originCost=33.377834, cost=33.12355, increPercentage=0.67999965]
@@ -899,6 +1118,7 @@ ODPair [origin=9, destination=5, demand=543.9997, originCost=9.862483, cost=9.73
 ODPair [origin=9, destination=6, demand=263.99988, originCost=19.68575, cost=19.829386, increPercentage=0.65999967]
 ODPair [origin=9, destination=7, demand=407.9998, originCost=20.51664, cost=20.369371, increPercentage=0.67999965]
 ODPair [origin=9, destination=8, demand=543.9997, originCost=14.898086, cost=14.887743, increPercentage=0.67999965]
+ODPair [origin=9, destination=9, demand=0.0, originCost=11.507908, cost=0.0, increPercentage=0.66999966]
 ODPair [origin=9, destination=10, demand=1875.999, originCost=5.7382426, cost=5.7959094, increPercentage=0.66999966]
 ODPair [origin=9, destination=11, demand=951.9995, originCost=18.116426, cost=18.173428, increPercentage=0.67999965]
 ODPair [origin=9, destination=12, demand=407.9998, originCost=20.52119, cost=20.36103, increPercentage=0.67999965]
@@ -923,6 +1143,7 @@ ODPair [origin=10, destination=6, demand=527.99976, originCost=25.455414, cost=2
 ODPair [origin=10, destination=7, demand=1177.9994, originCost=25.44932, cost=25.654305, increPercentage=0.6199997]
 ODPair [origin=10, destination=8, demand=1087.9994, originCost=20.667751, cost=20.701633, increPercentage=0.67999965]
 ODPair [origin=10, destination=9, demand=1875.999, originCost=5.7696657, cost=5.8138914, increPercentage=0.66999966]
+ODPair [origin=10, destination=10, demand=0.0, originCost=11.507908, cost=0.0, increPercentage=0.66999966]
 ODPair [origin=10, destination=11, demand=2719.9985, originCost=12.378183, cost=12.377518, increPercentage=0.67999965]
 ODPair [origin=10, destination=12, demand=1339.9993, originCost=26.006176, cost=26.123028, increPercentage=0.66999966]
 ODPair [origin=10, destination=13, demand=1272.9994, originCost=29.031605, cost=29.146563, increPercentage=0.66999966]
@@ -947,6 +1168,7 @@ ODPair [origin=11, destination=7, demand=334.99982, originCost=37.694176, cost=3
 ODPair [origin=11, destination=8, demand=543.9997, originCost=32.912605, cost=32.863846, increPercentage=0.67999965]
 ODPair [origin=11, destination=9, demand=951.9995, originCost=18.014523, cost=17.9761, increPercentage=0.67999965]
 ODPair [origin=11, destination=10, demand=2651.9985, originCost=12.244856, cost=12.16221, increPercentage=0.67999965]
+ODPair [origin=11, destination=11, demand=0.0, originCost=14.876331, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=11, destination=12, demand=895.9996, originCost=13.627994, cost=13.74551, increPercentage=0.6399997]
 ODPair [origin=11, destination=13, demand=639.9997, originCost=16.653421, cost=16.769045, increPercentage=0.6399997]
 ODPair [origin=11, destination=14, demand=1039.9995, originCost=13.782297, cost=13.959728, increPercentage=0.6499997]
@@ -971,6 +1193,7 @@ ODPair [origin=12, destination=8, demand=407.9998, originCost=35.30289, cost=35.
 ODPair [origin=12, destination=9, demand=407.9998, originCost=20.404804, cost=20.41111, increPercentage=0.67999965]
 ODPair [origin=12, destination=10, demand=1359.9993, originCost=26.143047, cost=26.20702, increPercentage=0.67999965]
 ODPair [origin=12, destination=11, demand=909.9996, originCost=13.915321, cost=14.018061, increPercentage=0.6499997]
+ODPair [origin=12, destination=12, demand=0.0, originCost=6.0517225, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=12, destination=13, demand=883.9996, originCost=3.025428, cost=3.023534, increPercentage=0.67999965]
 ODPair [origin=12, destination=14, demand=454.9998, originCost=27.697618, cost=27.977789, increPercentage=0.6499997]
 ODPair [origin=12, destination=15, demand=475.99976, originCost=39.931763, cost=39.94221, increPercentage=0.67999965]
@@ -995,6 +1218,7 @@ ODPair [origin=13, destination=9, demand=407.9998, originCost=23.431099, cost=23
 ODPair [origin=13, destination=10, demand=1291.9994, originCost=29.169342, cost=29.231518, increPercentage=0.67999965]
 ODPair [origin=13, destination=11, demand=649.9997, originCost=16.941616, cost=17.042557, increPercentage=0.6499997]
 ODPair [origin=13, destination=12, demand=883.9996, originCost=3.0262945, cost=3.0244968, increPercentage=0.67999965]
+ODPair [origin=13, destination=13, demand=0.0, originCost=6.0517225, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=13, destination=14, demand=407.9998, originCost=30.315369, cost=30.212368, increPercentage=0.67999965]
 ODPair [origin=13, destination=15, demand=454.9998, originCost=41.937153, cost=42.36754, increPercentage=0.6499997]
 ODPair [origin=13, destination=16, demand=401.9998, originCost=44.39052, cost=44.568676, increPercentage=0.66999966]
@@ -1019,6 +1243,7 @@ ODPair [origin=14, destination=10, demand=1406.9993, originCost=26.094896, cost=
 ODPair [origin=14, destination=11, demand=1087.9994, originCost=14.15347, cost=14.116457, increPercentage=0.67999965]
 ODPair [origin=14, destination=12, demand=475.99976, originCost=27.781464, cost=27.861967, increPercentage=0.67999965]
 ODPair [origin=14, destination=13, demand=407.9998, originCost=30.391827, cost=30.200687, increPercentage=0.67999965]
+ODPair [origin=14, destination=14, demand=0.0, originCost=18.078968, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=14, destination=15, demand=870.9996, originCost=12.310774, cost=12.364052, increPercentage=0.66999966]
 ODPair [origin=14, destination=16, demand=475.99976, originCost=33.30642, cost=33.282948, increPercentage=0.67999965]
 ODPair [origin=14, destination=17, demand=447.9998, originCost=24.064327, cost=24.436317, increPercentage=0.6399997]
@@ -1043,6 +1268,7 @@ ODPair [origin=15, destination=11, demand=951.9995, originCost=26.162306, cost=2
 ODPair [origin=15, destination=12, demand=468.99976, originCost=39.7903, cost=39.91692, increPercentage=0.66999966]
 ODPair [origin=15, destination=13, demand=454.9998, originCost=42.110844, cost=42.57259, increPercentage=0.6499997]
 ODPair [origin=15, destination=14, demand=883.9996, originCost=12.586377, cost=12.53054, increPercentage=0.67999965]
+ODPair [origin=15, destination=15, demand=0.0, originCost=8.657691, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=15, destination=16, demand=815.9996, originCost=20.995647, cost=20.918896, increPercentage=0.67999965]
 ODPair [origin=15, destination=17, demand=914.9996, originCost=11.753554, cost=12.072266, increPercentage=0.6099997]
 ODPair [origin=15, destination=18, demand=127.99994, originCost=17.946127, cost=18.175564, increPercentage=0.6399997]
@@ -1067,6 +1293,7 @@ ODPair [origin=16, destination=12, demand=461.99976, originCost=45.489735, cost=
 ODPair [origin=16, destination=13, demand=395.9998, originCost=44.600357, cost=44.781246, increPercentage=0.65999967]
 ODPair [origin=16, destination=14, demand=475.99976, originCost=33.36062, cost=33.40358, increPercentage=0.67999965]
 ODPair [origin=16, destination=15, demand=803.9996, originCost=20.774244, cost=20.873037, increPercentage=0.66999966]
+ODPair [origin=16, destination=16, demand=0.0, originCost=6.3331246, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=16, destination=17, demand=1903.999, originCost=9.143995, cost=8.855308, increPercentage=0.67999965]
 ODPair [origin=16, destination=18, demand=339.99982, originCost=3.1658828, cost=3.1513624, increPercentage=0.67999965]
 ODPair [origin=16, destination=19, demand=870.9996, originCost=16.44401, cost=16.565865, increPercentage=0.66999966]
@@ -1091,6 +1318,7 @@ ODPair [origin=17, destination=13, demand=334.99982, originCost=45.44362, cost=4
 ODPair [origin=17, destination=14, demand=454.9998, originCost=24.216625, cost=24.54827, increPercentage=0.6499997]
 ODPair [origin=17, destination=15, demand=899.9996, originCost=11.630249, cost=12.017729, increPercentage=0.5999997]
 ODPair [origin=17, destination=16, demand=1903.999, originCost=9.242094, cost=8.84663, increPercentage=0.67999965]
+ODPair [origin=17, destination=17, demand=0.0, originCost=14.726112, cost=0.0, increPercentage=0.58999974]
 ODPair [origin=17, destination=18, demand=407.9998, originCost=12.407977, cost=11.9979925, increPercentage=0.67999965]
 ODPair [origin=17, destination=19, demand=968.9996, originCost=7.3000145, cost=7.710556, increPercentage=0.56999975]
 ODPair [origin=17, destination=20, demand=1155.9994, originCost=16.651585, cost=16.252203, increPercentage=0.67999965]
@@ -1099,7 +1327,10 @@ ODPair [origin=17, destination=22, demand=1070.9995, originCost=20.573467, cost=
 ODPair [origin=17, destination=23, demand=383.99982, originCost=32.94984, cost=33.554703, increPercentage=0.6399997]
 ODPair [origin=17, destination=24, demand=203.9999, originCost=36.198753, cost=36.131416, increPercentage=0.67999965]
 ODPair [origin=18, destination=1, demand=67.99996, originCost=34.898808, cost=34.789146, increPercentage=0.67999965]
+ODPair [origin=18, destination=2, demand=0.0, originCost=28.897942, cost=28.788414, increPercentage=0.67999965]
+ODPair [origin=18, destination=3, demand=0.0, originCost=38.70094, cost=38.797256, increPercentage=0.66999966]
 ODPair [origin=18, destination=4, demand=66.99997, originCost=34.40363, cost=34.580326, increPercentage=0.66999966]
+ODPair [origin=18, destination=5, demand=0.0, originCost=32.065315, cost=32.257717, increPercentage=0.66999966]
 ODPair [origin=18, destination=6, demand=67.99996, originCost=22.315302, cost=22.263563, increPercentage=0.67999965]
 ODPair [origin=18, destination=7, demand=133.99994, originCost=2.0612416, cost=2.0615883, increPercentage=0.66999966]
 ODPair [origin=18, destination=8, demand=203.9999, originCost=7.6935277, cost=7.5707507, increPercentage=0.67999965]
@@ -1112,13 +1343,16 @@ ODPair [origin=18, destination=14, demand=66.99997, originCost=30.709324, cost=3
 ODPair [origin=18, destination=15, demand=131.99994, originCost=18.122948, cost=18.279419, increPercentage=0.65999967]
 ODPair [origin=18, destination=16, demand=339.99982, originCost=3.1672418, cost=3.1546, increPercentage=0.67999965]
 ODPair [origin=18, destination=17, demand=407.9998, originCost=12.311237, cost=12.009908, increPercentage=0.67999965]
+ODPair [origin=18, destination=18, demand=0.0, originCost=4.1222353, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=18, destination=19, demand=194.99991, originCost=13.792713, cost=13.972247, increPercentage=0.6499997]
 ODPair [origin=18, destination=20, demand=271.99985, originCost=4.27006, cost=4.2542105, increPercentage=0.67999965]
 ODPair [origin=18, destination=21, demand=67.99996, originCost=12.446541, cost=12.349632, increPercentage=0.67999965]
 ODPair [origin=18, destination=22, demand=203.9999, originCost=12.160118, cost=12.108906, increPercentage=0.67999965]
 ODPair [origin=18, destination=23, demand=67.99996, originCost=24.536491, cost=24.599878, increPercentage=0.67999965]
+ODPair [origin=18, destination=24, demand=0.0, originCost=23.892136, cost=24.13342, increPercentage=0.6399997]
 ODPair [origin=19, destination=1, demand=203.9999, originCost=44.39114, cost=44.26347, increPercentage=0.67999965]
 ODPair [origin=19, destination=2, demand=66.99997, originCost=42.51661, cost=42.662064, increPercentage=0.66999966]
+ODPair [origin=19, destination=3, demand=0.0, originCost=40.38213, cost=40.255314, increPercentage=0.67999965]
 ODPair [origin=19, destination=4, demand=135.99992, originCost=36.08482, cost=35.97441, increPercentage=0.67999965]
 ODPair [origin=19, destination=5, demand=67.99996, originCost=33.746506, cost=33.651802, increPercentage=0.67999965]
 ODPair [origin=19, destination=6, demand=133.99994, originCost=35.93397, cost=36.137215, increPercentage=0.66999966]
@@ -1134,6 +1368,7 @@ ODPair [origin=19, destination=15, demand=543.9997, originCost=4.3302345, cost=4
 ODPair [origin=19, destination=16, demand=883.9996, originCost=16.668192, cost=16.616982, increPercentage=0.67999965]
 ODPair [origin=19, destination=17, demand=1002.9996, originCost=7.426098, cost=7.7703524, increPercentage=0.58999974]
 ODPair [origin=19, destination=18, demand=188.99991, originCost=13.61867, cost=13.8736515, increPercentage=0.6299997]
+ODPair [origin=19, destination=19, demand=0.0, originCost=8.657691, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=19, destination=20, demand=743.99963, originCost=9.351571, cost=9.619432, increPercentage=0.6199997]
 ODPair [origin=19, destination=21, demand=263.99988, originCost=17.453144, cost=17.59951, increPercentage=0.65999967]
 ODPair [origin=19, destination=22, demand=803.9996, originCost=13.273454, cost=13.353172, increPercentage=0.66999966]
@@ -1141,6 +1376,7 @@ ODPair [origin=19, destination=23, demand=197.9999, originCost=25.649826, cost=2
 ODPair [origin=19, destination=24, demand=63.99997, originCost=28.89874, cost=29.383299, increPercentage=0.6399997]
 ODPair [origin=20, destination=1, demand=203.9999, originCost=39.16591, cost=39.04336, increPercentage=0.67999965]
 ODPair [origin=20, destination=2, demand=67.99996, originCost=33.16504, cost=33.04263, increPercentage=0.67999965]
+ODPair [origin=20, destination=3, demand=0.0, originCost=42.96804, cost=43.051476, increPercentage=0.66999966]
 ODPair [origin=20, destination=4, demand=200.9999, originCost=38.67073, cost=38.834545, increPercentage=0.66999966]
 ODPair [origin=20, destination=5, demand=66.99997, originCost=36.332413, cost=36.511936, increPercentage=0.66999966]
 ODPair [origin=20, destination=6, demand=203.9999, originCost=26.582401, cost=26.51778, increPercentage=0.67999965]
@@ -1157,11 +1393,14 @@ ODPair [origin=20, destination=16, demand=1087.9994, originCost=7.4343414, cost=
 ODPair [origin=20, destination=17, demand=1155.9994, originCost=16.578337, cost=16.264126, increPercentage=0.67999965]
 ODPair [origin=20, destination=18, demand=271.99985, originCost=4.2670994, cost=4.2542186, increPercentage=0.67999965]
 ODPair [origin=20, destination=19, demand=779.99963, originCost=9.522654, cost=9.718037, increPercentage=0.6499997]
+ODPair [origin=20, destination=20, demand=0.0, originCost=8.537159, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=20, destination=21, demand=815.9996, originCost=8.176481, cost=8.095422, increPercentage=0.67999965]
 ODPair [origin=20, destination=22, demand=1631.9991, originCost=7.8900576, cost=7.854695, increPercentage=0.67999965]
 ODPair [origin=20, destination=23, demand=475.99976, originCost=20.26643, cost=20.345667, increPercentage=0.67999965]
 ODPair [origin=20, destination=24, demand=255.99988, originCost=19.622078, cost=19.879211, increPercentage=0.6399997]
 ODPair [origin=21, destination=1, demand=65.99997, originCost=40.04569, cost=40.33354, increPercentage=0.65999967]
+ODPair [origin=21, destination=2, demand=0.0, originCost=41.279594, cost=41.068645, increPercentage=0.67999965]
+ODPair [origin=21, destination=3, demand=0.0, originCost=36.03668, cost=36.325386, increPercentage=0.65999967]
 ODPair [origin=21, destination=4, demand=131.99994, originCost=40.325195, cost=40.606194, increPercentage=0.65999967]
 ODPair [origin=21, destination=5, demand=67.99996, originCost=42.511803, cost=42.57832, increPercentage=0.67999965]
 ODPair [origin=21, destination=6, demand=67.99996, originCost=34.696957, cost=34.543797, increPercentage=0.67999965]
@@ -1179,6 +1418,7 @@ ODPair [origin=21, destination=17, demand=407.9998, originCost=24.692894, cost=2
 ODPair [origin=21, destination=18, demand=67.99996, originCost=12.381656, cost=12.280233, increPercentage=0.67999965]
 ODPair [origin=21, destination=19, demand=259.99988, originCost=17.422989, cost=17.535606, increPercentage=0.6499997]
 ODPair [origin=21, destination=20, demand=815.9996, originCost=8.114556, cost=8.026014, increPercentage=0.67999965]
+ODPair [origin=21, destination=21, demand=0.0, originCost=8.369833, cost=0.0, increPercentage=0.6299997]
 ODPair [origin=21, destination=22, demand=1133.9995, originCost=4.1901417, cost=4.2401857, increPercentage=0.6299997]
 ODPair [origin=21, destination=23, demand=447.9998, originCost=15.200494, cost=15.431517, increPercentage=0.6399997]
 ODPair [origin=21, destination=24, demand=309.99985, originCost=11.445596, cost=11.783789, increPercentage=0.6199997]
@@ -1203,9 +1443,11 @@ ODPair [origin=22, destination=18, demand=203.9999, originCost=12.094109, cost=1
 ODPair [origin=22, destination=19, demand=791.9996, originCost=13.232847, cost=13.295421, increPercentage=0.65999967]
 ODPair [origin=22, destination=20, demand=1631.9991, originCost=7.8270097, cost=7.7867184, increPercentage=0.67999965]
 ODPair [origin=22, destination=21, demand=1115.9995, originCost=4.1796913, cost=4.2463374, increPercentage=0.6199997]
+ODPair [origin=22, destination=22, demand=0.0, originCost=8.369833, cost=0.0, increPercentage=0.6299997]
 ODPair [origin=22, destination=23, demand=1385.9993, originCost=12.376373, cost=12.4909725, increPercentage=0.65999967]
 ODPair [origin=22, destination=24, demand=681.9997, originCost=15.625287, cost=16.030127, increPercentage=0.6199997]
 ODPair [origin=23, destination=1, demand=203.9999, originCost=32.41906, cost=32.223675, increPercentage=0.67999965]
+ODPair [origin=23, destination=2, demand=0.0, originCost=38.419952, cost=38.224415, increPercentage=0.67999965]
 ODPair [origin=23, destination=3, demand=67.99996, originCost=28.41005, cost=28.21552, increPercentage=0.67999965]
 ODPair [origin=23, destination=4, demand=339.99982, originCost=30.718204, cost=30.470722, increPercentage=0.67999965]
 ODPair [origin=23, destination=5, demand=67.99996, originCost=33.052303, cost=32.79593, increPercentage=0.67999965]
@@ -1226,9 +1468,13 @@ ODPair [origin=23, destination=19, demand=194.99991, originCost=25.340141, cost=
 ODPair [origin=23, destination=20, demand=454.9998, originCost=19.934305, cost=20.030878, increPercentage=0.6499997]
 ODPair [origin=23, destination=21, demand=454.9998, originCost=15.148563, cost=15.270394, increPercentage=0.6499997]
 ODPair [origin=23, destination=22, demand=1364.9993, originCost=12.107295, cost=12.24416, increPercentage=0.6499997]
+ODPair [origin=23, destination=23, demand=0.0, originCost=7.5738645, cost=0.0, increPercentage=0.67999965]
 ODPair [origin=23, destination=24, demand=475.99976, originCost=3.8189666, cost=3.673926, increPercentage=0.67999965]
 ODPair [origin=24, destination=1, demand=67.99996, originCost=28.600094, cost=28.54975, increPercentage=0.67999965]
+ODPair [origin=24, destination=2, demand=0.0, originCost=34.600986, cost=34.550488, increPercentage=0.67999965]
+ODPair [origin=24, destination=3, demand=0.0, originCost=24.591084, cost=24.541595, increPercentage=0.67999965]
 ODPair [origin=24, destination=4, demand=135.99992, originCost=28.879599, cost=28.822403, increPercentage=0.67999965]
+ODPair [origin=24, destination=5, demand=0.0, originCost=31.213697, cost=31.147612, increPercentage=0.67999965]
 ODPair [origin=24, destination=6, demand=67.99996, originCost=41.036964, cost=41.086517, increPercentage=0.67999965]
 ODPair [origin=24, destination=7, demand=64.99997, originCost=25.772495, cost=25.93829, increPercentage=0.6499997]
 ODPair [origin=24, destination=8, demand=133.99994, originCost=31.404781, cost=31.447453, increPercentage=0.66999966]
@@ -1241,8 +1487,10 @@ ODPair [origin=24, destination=14, demand=271.99985, originCost=12.803344, cost=
 ODPair [origin=24, destination=15, demand=255.99988, originCost=24.425129, cost=24.830162, increPercentage=0.6399997]
 ODPair [origin=24, destination=16, demand=194.99991, originCost=26.878494, cost=27.031301, increPercentage=0.6499997]
 ODPair [origin=24, destination=17, demand=203.9999, originCost=36.02249, cost=35.88661, increPercentage=0.67999965]
+ODPair [origin=24, destination=18, demand=0.0, originCost=23.711252, cost=23.876701, increPercentage=0.6499997]
 ODPair [origin=24, destination=19, demand=63.99997, originCost=28.752586, cost=29.132076, increPercentage=0.6399997]
 ODPair [origin=24, destination=20, demand=259.99988, originCost=19.444153, cost=19.622482, increPercentage=0.6499997]
 ODPair [origin=24, destination=21, demand=314.99985, originCost=11.3295965, cost=11.596468, increPercentage=0.6299997]
 ODPair [origin=24, destination=22, demand=692.9997, originCost=15.519738, cost=15.836654, increPercentage=0.6299997]
 ODPair [origin=24, destination=23, demand=475.99976, originCost=3.7548978, cost=3.6477284, increPercentage=0.67999965]
+ODPair [origin=24, destination=24, demand=0.0, originCost=7.5738645, cost=0.0, increPercentage=0.67999965]

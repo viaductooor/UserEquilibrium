@@ -10,26 +10,26 @@ public class LogWriter {
 	public final static String odUrl = "log/log_odpair.txt";
 	public final static String logUrl = "log/log.txt";
 	private FileWriter logWriter;
-	private List<Link> linkList;
-	private List<ODPair> odList;
+	private List<UeLink> linkList;
+	private List<ChangeDemandOdpair> odList;
 
-	public List<Link> getLinkList() {
+	public List<UeLink> getLinkList() {
 		return linkList;
 	}
 
-	public void setLinkList(List<Link> linkList) {
+	public void setLinkList(List<UeLink> linkList) {
 		this.linkList = linkList;
 	}
 
-	public List<ODPair> getOdList() {
+	public List<ChangeDemandOdpair> getOdList() {
 		return odList;
 	}
 
-	public void setOdList(List<ODPair> odList) {
+	public void setOdList(List<ChangeDemandOdpair> odList) {
 		this.odList = odList;
 	}
 
-	public LogWriter(List<Link> ll, List<ODPair> ol) {
+	public LogWriter(List<UeLink> ll, List<ChangeDemandOdpair> ol) {
 		this.linkList = ll;
 		this.odList = ol;
 	}
@@ -37,7 +37,7 @@ public class LogWriter {
 	public void logWriteLink(String header) {
 		try {
 			logWriter.write("\r\n\r\n" + header + "\r\n\r\n");
-			for (Link l : linkList) {
+			for (UeLink l : linkList) {
 				logWriter.write(l.toString() + "\r\n");
 			}
 		} catch (IOException e) {
@@ -49,7 +49,7 @@ public class LogWriter {
 	public void logWriteOd(String header) {
 		try {
 			logWriter.write("\r\n\r\n" + header + "\r\n\r\n");
-			for (ODPair odp : odList) {
+			for (ChangeDemandOdpair odp : odList) {
 				logWriter.write(odp.toString() + "\r\n");
 			}
 		} catch (IOException e) {

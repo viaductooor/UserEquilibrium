@@ -2,80 +2,68 @@ package main;
 
 import java.util.List;
 
-public abstract class DataSet {
-	private String netUrl;
-	private String tripUrl;
+public class DataSet {
+	private int zoneNumber;
+	private int nodeNubmer;
+	private int firstThruNode;
+	private int linkNumber;
 	private List<Link> links;
-	private List<ODPair> odpairs;
-	private int maxSize;
+	private List<Odpair> trips;
 
-	public DataSet(String netUrl, String tripUrl) {
-		this.netUrl = netUrl;
-		this.tripUrl = tripUrl;
-		setLinks(readLinks());
-		setOdpairs(readTrips());
-		this.maxSize = computeMaxsize();
+	public int getZoneNumbers() {
+		return zoneNumber;
 	}
 
-	public DataSet() {
-
+	public int getNodeNubmer() {
+		return nodeNubmer;
 	}
 
-	public String getNetUrl() {
-		return netUrl;
+	public int getFirstThruNode() {
+		return firstThruNode;
 	}
 
-	public void setNetUrl(String netUrl) {
-		this.netUrl = netUrl;
-	}
-
-	public String getTripUrl() {
-		return tripUrl;
-	}
-
-	public void setTripUrl(String tripUrl) {
-		this.tripUrl = tripUrl;
-	}
-
-	public List<ODPair> getOdpairs() {
-		return odpairs;
-	}
-
-	public void setOdpairs(List<ODPair> odpairs) {
-		this.odpairs = odpairs;
-	}
-
-	public void setLinks(List<Link> links) {
-		this.links = links;
+	public int getLinkNumber() {
+		return linkNumber;
 	}
 
 	public List<Link> getLinks() {
 		return links;
 	}
 
-	public abstract List<Link> readLinks();
+	public List<Odpair> getTrips() {
+		return trips;
+	}
 
-	public abstract List<ODPair> readTrips();
+	public void setZoneNumbers(int mZoneNumbers) {
+		this.zoneNumber = mZoneNumbers;
+	}
+
+	public void setNodeNubmers(int mNodeNubmers) {
+		this.nodeNubmer = mNodeNubmers;
+	}
+
+	public void setFirstThruNode(int mFirstThruNode) {
+		this.firstThruNode = mFirstThruNode;
+	}
+
+	public void setLinkNumbers(int mLinkNumbers) {
+		this.linkNumber = mLinkNumbers;
+	}
+
+	public void setLinks(List<Link> mLinks) {
+		this.links = mLinks;
+	}
+
+	public void setTrips(List<Odpair> mTrips) {
+		this.trips = mTrips;
+	}
 
 	@Override
 	public String toString() {
-		return "Case [netUrl=" + netUrl + ", tripUrl=" + tripUrl + "]";
+		return "DataSet [mZoneNumbers=" + zoneNumber + ", mNodeNubmers=" + nodeNubmer + ", mFirstThruNode="
+				+ firstThruNode + ", mLinkNumbers=" + linkNumber + ", mLinks=" + links + ", mTrips=" + trips + "]";
 	}
+	
+	
 
-	public int computeMaxsize() {
-		int max = 0;
-		for (Link l : links) {
-			int origin = l.getInitNode();
-			int des = l.getTermNode();
-			int t = origin > des ? origin : des;
-			if (t > max) {
-				max = t;
-			}
-		}
-		return max;
-	}
-
-	public int getMaxsize() {
-		return this.maxSize;
-	}
 }

@@ -1,73 +1,47 @@
 package main;
 
-public class Link {
-	private int initNode;
-	private int termNode;
-	private float capacity;
-	private float length;
-	private float freeFlowTime;
-	private float flow;
-	private float auxFlow;
-	private float travelTime;
-	private float surcharge;
-	private float lastSurcharge;
 
-	public Link(int initNode, int termNode, float capacity, float length,
-			float freeFlowTime) {
+public class Link{
+	protected int from;
+	protected int to;
+	protected float capacity;
+	protected float length;
+	protected float ftime;
+	protected float B;
+	protected float power;
+	protected float speed;
+	protected int toll;
+	protected int type;
+
+	public Link(int from, int to, float capacity, float length, float ftime, float b, float power, float speed, int toll,
+			int type) {
 		super();
-		this.initNode = initNode;
-		this.termNode = termNode;
+		this.from = from;
+		this.to = to;
 		this.capacity = capacity;
 		this.length = length;
-		this.freeFlowTime = freeFlowTime;
-		this.travelTime = 0;
-		this.flow = 0;
-		this.auxFlow = 0;
-		this.surcharge = 0;
-		this.lastSurcharge = 0;
-		updateTravelTime();
+		this.ftime = ftime;
+		B = b;
+		this.power = power;
+		this.speed = speed;
+		this.toll = toll;
+		this.type = type;
 	}
 
-	public void setFlow(float flow) {
-		this.flow = flow;
+	public int getFrom() {
+		return from;
 	}
 
-	public float getFlow() {
-		return this.flow;
+	public void setFrom(int from) {
+		this.from = from;
 	}
 
-	public float getAuxFlow() {
-		return auxFlow;
+	public int getTo() {
+		return to;
 	}
 
-	public void setAuxFlow(float f) {
-		this.auxFlow = f;
-	}
-
-	public float getTravelTime() {
-		return this.travelTime;
-	}
-
-	public void updateTravelTime() {
-		// calculate travelTime based on BPR function
-		this.travelTime = (float) (((Math.pow(this.flow / this.capacity, 4)) * 0.15 + 1) * this.freeFlowTime);
-		this.travelTime += this.surcharge;
-	}
-
-	public float[] getContent() {
-		float[] res = new float[3];
-		res[0] = this.initNode;
-		res[1] = this.termNode;
-		res[2] = this.flow;
-		return res;
-	}
-
-	public int getInitNode() {
-		return initNode;
-	}
-
-	public int getTermNode() {
-		return termNode;
+	public void setTo(int to) {
+		this.to = to;
 	}
 
 	public float getCapacity() {
@@ -78,39 +52,66 @@ public class Link {
 		this.capacity = capacity;
 	}
 
-	public float getFreeFlowTime() {
-		return freeFlowTime;
+	public float getLength() {
+		return length;
 	}
 
-	public void setFreeFlowTime(float freeFlowTime) {
-		this.freeFlowTime = freeFlowTime;
+	public void setLength(float length) {
+		this.length = length;
 	}
 
-	public void setTravelTime(float res) {
-		this.travelTime = res;
+	public float getFtime() {
+		return ftime;
 	}
 
-	public float getSurcharge() {
-		return surcharge;
+	public void setFtime(float ftime) {
+		this.ftime = ftime;
 	}
 
-	public void setSurcharge(float surcharge) {
-		this.surcharge = surcharge;
+	public float getB() {
+		return B;
 	}
 
-	public float getLastSurcharge() {
-		return lastSurcharge;
+	public void setB(float b) {
+		B = b;
 	}
 
-	public void setLastSurcharge(float lastSurcharge) {
-		this.lastSurcharge = lastSurcharge;
+	public float getPower() {
+		return power;
+	}
+
+	public void setPower(float power) {
+		this.power = power;
+	}
+
+	public float getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(float speed) {
+		this.speed = speed;
+	}
+
+	public int getToll() {
+		return toll;
+	}
+
+	public void setToll(int toll) {
+		this.toll = toll;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}
 
 	@Override
 	public String toString() {
-		return "Link [init=" + initNode + ", term=" + termNode + ", flow="
-				+ flow + ", travelTime=" + travelTime + ", surcharge="
-				+ surcharge + ", lastSurcharge=" + lastSurcharge + "]";
+		return "from=" + from + ", to=" + to + ", capacity=" + capacity + ", length=" + length + ", ftime="
+				+ ftime + ", B=" + B + ", power=" + power + ", speed=" + speed + ", toll=" + toll + ", type=" + type+"\n";
 	}
 
 }

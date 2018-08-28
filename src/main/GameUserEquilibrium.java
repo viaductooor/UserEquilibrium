@@ -1,31 +1,32 @@
 package main;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.function.BiFunction;
 
-import jnetwork.Graph;
-import jnetwork.WeightedLink;
-import functions.ShortestPath;
-import functions.ShortestPath.Node;
+public class GameUserEquilibrium {
 
-public class UserEquilibrium {
-
-	private List<UeLink> mLinks;
+	private List<GameLink> mLinks;
 	private List<Odpair> mOdpairs;
 	private int nodeNumber;
 
-	public UserEquilibrium(UeDataSet dataSet) {
-		this.mLinks = dataSet.getLinks();
+	public GameUserEquilibrium(UeDataSet dataSet) {
+		this.mLinks = uelinks2glinks(dataSet.getLinks());
 		this.mOdpairs = dataSet.getTrips();
 		this.nodeNumber = dataSet.getNodeNubmer();
 	}
 
-	public UserEquilibrium(List<UeLink> links, List<Odpair> odpairs, int nodeNumber) {
+	public GameUserEquilibrium(List<GameLink> links, List<Odpair> odpairs, int nodeNumber) {
 		this.mLinks = links;
 		this.mOdpairs = odpairs;
 		this.nodeNumber = nodeNumber;
+	}
+	
+	public List<GameLink> uelinks2glinks(List<UeLink> links){
+		List<GameLink> glinks = new LinkedList<GameLink>();
+		for(UeLink l:links) {
+			glinks.add(new GameLink(l.getFrom(), l.getTo(), l.getCapacity(), l.getLength(), l.getFtime(), l.getB(), l.getPower(), l.getSpeed(), l.getToll(), l.getType()));
+		}
+		return glinks;
 	}
 
 	/**
@@ -34,7 +35,7 @@ public class UserEquilibrium {
 	 * @param odset
 	 * @param links
 	 */
-	public void allOrNothing(List<Odpair> odset, List<UeLink> links) {
+	public void allOrNothing(List<Odpair> odset, List<GameLink> links) {
 		float[][] tmat = getTMatrix(links, nodeNumber);
 		clearAuxFlow(links);
 		Floyd f = new Floyd();
@@ -53,31 +54,7 @@ public class UserEquilibrium {
 		}
 	}
 
-	public static <T> void allOrNothing(Graph<T, UeLink> links, Graph<T, UeLink> trips) {
-		HashMap<T, HashMap<T, Node<T>>> allPaths = new ShortestPath<T, UeLink>()
-				.allPaths(links);
-		BiFunction<T, T, List<T>> getPath = (T begin,
-				T end) -> new ShortestPath<T, UeLink>().path(allPaths, begin, end);
-		Graph<T,UeLink> newGraph = new Graph<T, UeLink>();
-		
-		for (Graph.Entry<T, UeLink> e : trips.entrySet()) {
-			T begin = e.getBegin();
-			T end = e.getEnd();
-			float weight = e.getLink().getWeight();
-			List<T> route = getPath.apply(begin, end);
-			for (int i = 0; i < route.size() - 1; i++) {
-				T init = route.get(i);
-				T term = route.get(i + 1);
-				if(!links.containsEdge(init, term)) {
-					newGraph.addEdge(init, term, links.getLink(init, term));
-				}else {
-					
-				}
-			}
-		}
-	}
-
-	public static float[][] getTMatrix(List<UeLink> set, int maxsize) {
+	public static float[][] getTMatrix(List<GameLink> set, int maxsize) {
 		for (UeLink l : set) {
 			l.updateTravelTime();
 		}
@@ -93,13 +70,13 @@ public class UserEquilibrium {
 		return mat;
 	}
 
-	public static void clearAuxFlow(List<UeLink> set) {
+	public static void clearAuxFlow(List<GameLink> set) {
 		for (UeLink l : set) {
 			l.setAuxFlow(0);
 		}
 	}
 
-	public static UeLink getLink(int start, int end, List<UeLink> set) {
+	public static UeLink getLink(int start, int end, List<GameLink> set) {
 		for (UeLink l : set) {
 			if (l.getFrom() == start) {
 				if (l.getTo() == end) {
@@ -115,19 +92,19 @@ public class UserEquilibrium {
 	 * 
 	 * @param set
 	 */
-	public static void y2x(List<UeLink> set) {
+	public static void y2x(List<GameLink> set) {
 		for (UeLink l : set) {
 			l.setFlow(l.getAuxFlow());
 		}
 	}
 
-	public static void updateTMatrix(List<UeLink> set) {
+	public static void updateTMatrix(List<GameLink> set) {
 		for (UeLink l : set) {
 			l.updateTravelTime();
 		}
 	}
 
-	public static float lineSearch(List<UeLink> links) {
+	public static float lineSearch(List<GameLink> links) {
 		float alpha = 1;
 		float minSum = Float.POSITIVE_INFINITY;
 		for (float al = 0; al < 1.001; al += 0.001) {
@@ -150,7 +127,7 @@ public class UserEquilibrium {
 		return alpha;
 	}
 
-	public static float getTotalFlow(List<UeLink> set) {
+	public static float getTotalFlow(List<GameLink> set) {
 		float sum = 0;
 		for (UeLink l : set) {
 			sum += l.getFlow();
@@ -164,7 +141,7 @@ public class UserEquilibrium {
 	 * @param links
 	 * @param alpha
 	 */
-	public static void move(List<UeLink> links, float alpha) {
+	public static void move(List<GameLink> links, float alpha) {
 		for (UeLink l : links) {
 			l.setFlow(l.getFlow() + alpha * (l.getAuxFlow() - l.getFlow()));
 		}

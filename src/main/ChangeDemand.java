@@ -4,22 +4,18 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import dataset.FourLinks;
-import dataset.SiouxFalls;
-import dataset.Winnipeg_asym;
-
 public final class ChangeDemand {
-	private List<Link> mLinks;
-	private List<ODPair> mOdpairs;
-	private DataSet mDataSet;
+	private List<UeLink> mLinks;
+	private List<ChangeDemandOdpair> mOdpairs;
+	private UeDataSet mDataSet;
 	private float uediff;
 	private int maxSize;
 
-	public ChangeDemand(DataSet ds) {
-		this.mOdpairs = ds.getOdpairs();
+	public ChangeDemand(UeDataSet ds) {
+		this.mOdpairs = odp2cdodp(ds.getTrips());
 		this.mLinks = ds.getLinks();
 		this.mDataSet = ds;
-		this.maxSize = ds.getMaxsize();
+		this.maxSize = ds.getNodeNubmer();
 	}
 
 	public void init() {
@@ -32,12 +28,20 @@ public final class ChangeDemand {
 		Floyd f = new Floyd();
 		f.setMatrix(UserEquilibrium.getTMatrix(mLinks, maxSize));
 		f.compute();
-		for (ODPair odp : mOdpairs) {
-			int origin = odp.getOrigin();
-			int destination = odp.getDestination();
+		for (ChangeDemandOdpair odp : mOdpairs) {
+			int origin = odp.getFrom();
+			int destination = odp.getTo();
 			float totalCost = f.getTotalCost(origin, destination);
 			odp.setOriginCost(totalCost);
 		}
+	}
+	
+	public List<ChangeDemandOdpair> odp2cdodp(List<Odpair> odps){
+		List<ChangeDemandOdpair> list = new LinkedList<ChangeDemandOdpair>();
+		for(Odpair odp:odps) {
+			list.add(new ChangeDemandOdpair(odp));
+		}
+		return list;
 	}
 
 	/**
@@ -71,7 +75,7 @@ public final class ChangeDemand {
 		return (float) (((Math.pow(flow / capacity, 4)) * 0.15 + 1) * freeFlowTime);
 	}
 
-	public List<ODPair> getODPairList() {
+	public List<ChangeDemandOdpair> getODPairList() {
 		return this.mOdpairs;
 	}
 
@@ -80,17 +84,17 @@ public final class ChangeDemand {
 	 * @param list
 	 * @return
 	 */
-	public static float getSuchargeDiff(List<Link> list) {
+	public static float getSuchargeDiff(List<UeLink> list) {
 		float sum = 0;
-		for (Link l : list) {
+		for (UeLink l : list) {
 			sum += Math.abs(l.getLastSurcharge() - l.getSurcharge());
 		}
 		return sum;
 	}
 
-	public static float getTotalLinkTravelTime(List<Link> list) {
+	public static float getTotalLinkTravelTime(List<UeLink> list) {
 		float sum = 0;
-		for (Link l : list) {
+		for (UeLink l : list) {
 			sum += l.getTravelTime();
 		}
 		return sum;
@@ -102,26 +106,26 @@ public final class ChangeDemand {
 	 * @param n
 	 * @param odp
 	 */
-	public static void load(float n, ODPair odp, List<Link> linklist, Floyd f) {
+	public static void load(float n, ChangeDemandOdpair odp, List<UeLink> linklist, Floyd f) {
 		float demand = odp.getOriginDemand();
 		float per = odp.getIncrePercentage();
 		per = per + n;
 		odp.setIncrePercentage(per);
-		int origin = odp.getOrigin();
-		int des = odp.getDestination();
+		int origin = odp.getFrom();
+		int des = odp.getTo();
 		List<Integer> l = f.getShortestPath(origin, des);
 		for (int i = 0; i < l.size() - 1; i++) {
-			Link _l = ChangeDemand.getLink(l.get(i), l.get(i + 1), linklist);
+			UeLink _l = ChangeDemand.getLink(l.get(i), l.get(i + 1), linklist);
 			_l.setFlow(_l.getFlow() + n * demand);
 			_l.updateTravelTime();
 		}
 	}
 
-	public static Link getLink(int start, int end, List<Link> list) {
-		Link link = null;
-		for (Link l : list) {
-			int s = l.getInitNode();
-			int e = l.getTermNode();
+	public static UeLink getLink(int start, int end, List<UeLink> list) {
+		UeLink link = null;
+		for (UeLink l : list) {
+			int s = l.getFrom();
+			int e = l.getTo();
 			if (start == s & end == e) {
 				link = l;
 				break;
@@ -137,17 +141,17 @@ public final class ChangeDemand {
 	 * @param maxSize
 	 * @return :the adjacent matrix
 	 */
-	public static float[][] getTravelTimeMatrix(List<Link> list, int maxSize) {
+	public static float[][] getTravelTimeMatrix(List<UeLink> list, int maxSize) {
 		float[][] mat = new float[maxSize][maxSize];
 		for (int i = 0; i < maxSize; i++) {
 			for (int j = 0; j < maxSize; j++) {
 				mat[i][j] = Float.POSITIVE_INFINITY;
 			}
 		}
-		for (Link link : list) {
+		for (UeLink link : list) {
 			link.updateTravelTime();
-			int origin = link.getInitNode();
-			int destination = link.getTermNode();
+			int origin = link.getFrom();
+			int destination = link.getTo();
 			float traveltime = link.getTravelTime();
 			mat[origin - 1][destination - 1] = traveltime;
 		}
@@ -191,8 +195,8 @@ public final class ChangeDemand {
 			/**
 			 * update marginal cost and link surcharge
 			 */
-			for (Link l : mLinks) {
-				float marginalCost = computeMarginalCost(l.getFlow(), l.getFreeFlowTime(), l.getCapacity());
+			for (UeLink l : mLinks) {
+				float marginalCost = computeMarginalCost(l.getFlow(), l.getFtime(), l.getCapacity());
 				float nowSurcharge = l.getSurcharge();
 				l.setLastSurcharge(nowSurcharge);
 				float sur = computeSurcharge(count1, marginalCost, nowSurcharge);
@@ -207,7 +211,7 @@ public final class ChangeDemand {
 			/**
 			 * clear the volume of every link which will be set later in the step "load"
 			 */
-			for (Link l : mLinks) {
+			for (UeLink l : mLinks) {
 				l.setFlow(0);
 			}
 
@@ -226,13 +230,13 @@ public final class ChangeDemand {
 				 * for each OD Pair, find shortest path if it's total cost < original cost then
 				 * load 5% original demand(or something else)
 				 */
-				for (ODPair odp : mOdpairs) {
+				for (ChangeDemandOdpair odp : mOdpairs) {
 					/**
 					 * get the shortest path of the OD pair, then update its total cost total_cost =
 					 * sum_travel_time + sum_surcharge
 					 */
-					int o = odp.getOrigin();
-					int d = odp.getDestination();
+					int o = odp.getFrom();
+					int d = odp.getTo();
 					float totalCost = f.getTotalCost(o, d);
 					odp.setCost(totalCost);
 
@@ -253,16 +257,16 @@ public final class ChangeDemand {
 				/**
 				 * update the cost of all ODPairs based on the composing links
 				 */
-				for (ODPair odp : mOdpairs) {
+				for (ChangeDemandOdpair odp : mOdpairs) {
 					updateCost(f, mLinks, odp);
 				}
-			
+
 			} while (lockcount < mOdpairs.size());
 
 			/**
 			 * update demand
 			 */
-			for (ODPair odp : mOdpairs) {
+			for (ChangeDemandOdpair odp : mOdpairs) {
 				float demand = odp.getOriginDemand();
 				float percentage = odp.getIncrePercentage();
 				odp.setDemand(demand * percentage);
@@ -276,7 +280,7 @@ public final class ChangeDemand {
 			// lw.logWriteOd("ODPairs:");
 		} while (diff > surchargeDiff);
 
-		for (Link l : mLinks) {
+		for (UeLink l : mLinks) {
 			l.setTravelTime(l.getTravelTime() - l.getSurcharge());
 		}
 
@@ -285,14 +289,14 @@ public final class ChangeDemand {
 		lw.close();
 	}
 
-	public static void clearPercentage(List<ODPair> odl) {
-		for (ODPair odp : odl) {
+	public static void clearPercentage(List<ChangeDemandOdpair> odl) {
+		for (ChangeDemandOdpair odp : odl) {
 			odp.setIncrePercentage(0);
 		}
 	}
-	
-	public static void clearLock(List<ODPair> odl) {
-		for(ODPair odp:odl) {
+
+	public static void clearLock(List<ChangeDemandOdpair> odl) {
+		for (ChangeDemandOdpair odp : odl) {
 			odp.setLock(false);
 		}
 	}
@@ -303,13 +307,13 @@ public final class ChangeDemand {
 	 * @param ll
 	 * @param ol
 	 */
-	public void updateCost(Floyd f, List<Link> ll, ODPair odp) {
+	public void updateCost(Floyd f, List<UeLink> ll, ChangeDemandOdpair odp) {
 		float sum = 0;
-		int origin = odp.getOrigin();
-		int des = odp.getDestination();
+		int origin = odp.getFrom();
+		int des = odp.getTo();
 		List<Integer> l = f.getShortestPath(origin, des);
 		for (int i = 0; i < l.size() - 1; i++) {
-			Link link = getLink(l.get(i), l.get(i + 1), ll);
+			UeLink link = getLink(l.get(i), l.get(i + 1), ll);
 			sum = sum + link.getTravelTime();
 		}
 		odp.setCost(sum);
@@ -331,7 +335,7 @@ public final class ChangeDemand {
 		lw.logWriteLink("Original Link:");
 		UserEquilibrium ue = new UserEquilibrium(mDataSet);
 
-		for (Link l : mLinks) {
+		for (UeLink l : mLinks) {
 			originalFlow += l.getFlow();
 			originCost = originCost + l.getTravelTime() * l.getFlow();
 		}
@@ -347,8 +351,8 @@ public final class ChangeDemand {
 			/**
 			 * update marginal cost and link surcharge
 			 */
-			for (Link l : mLinks) {
-				float marginalCost = computeMarginalCost(l.getFlow(), l.getFreeFlowTime(), l.getCapacity());
+			for (UeLink l : mLinks) {
+				float marginalCost = computeMarginalCost(l.getFlow(), l.getFtime(), l.getCapacity());
 				float nowSurcharge = l.getSurcharge();
 				l.setLastSurcharge(nowSurcharge);
 				float sur = computeSurcharge(count1, marginalCost, nowSurcharge);
@@ -360,7 +364,7 @@ public final class ChangeDemand {
 			lw.logWriteOther("surcharge diff:" + diff);
 		} while (diff > sdiff);
 
-		for (Link l : mLinks) {
+		for (UeLink l : mLinks) {
 			l.setTravelTime(l.getTravelTime() - l.getSurcharge());
 			optFlow += l.getFlow();
 			optCost += l.getTravelTime() * l.getFlow();
@@ -373,7 +377,7 @@ public final class ChangeDemand {
 
 	public static void main(String[] a) {
 		long startTime = System.currentTimeMillis();
-		DataSet dataSet = new SiouxFalls();
+		UeDataSet dataSet = new UeDataSet(TNTPReader.read(TNTPReader.SIOUXFALLS_TRIP, TNTPReader.SIOUXFALLS_NET));
 		ChangeDemand cd = new ChangeDemand(dataSet);
 		cd.setUediff(50);
 		cd.changeDemand(0.01f, 5);

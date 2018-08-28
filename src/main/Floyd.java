@@ -8,7 +8,8 @@ public class Floyd {
 	private float[][] d;
 	private int size;
 
-	public void setMatrix(float a[][]) {
+
+	public void setMatrix(float[][] a) {
 		// ÉèÖÃÁÚ½Ó¾ØÕó
 		this.m = a;
 		this.size = this.m[0].length;
