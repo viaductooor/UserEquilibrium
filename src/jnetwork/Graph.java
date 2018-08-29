@@ -106,7 +106,7 @@ public class Graph<K, L> {
 	 */
 	public List<Graph.Entry<K,L>> entrySet() {
 		List<Entry<K, L>> l = new LinkedList<Graph.Entry<K,L>>();
-		for(java.util.Map.Entry<K, HashMap<K, L>> _m:map.entrySet()) {
+		for(Map.Entry<K, HashMap<K, L>> _m:map.entrySet()) {
 			K init = _m.getKey();
 			for(Map.Entry<K, L> _l:_m.getValue().entrySet()) {
 				K end = _l.getKey();
@@ -125,6 +125,17 @@ public class Graph<K, L> {
 		HashSet<K> set = new HashSet<K>();
 		for (Map.Entry<K, HashMap<K,L>> entry:map.entrySet()) {
 			set.add(entry.getKey());
+		}
+		return set;
+	}
+	
+	public Set<L> edges(){
+		HashSet<L> set = new HashSet<L>();
+		for(Map.Entry<K, HashMap<K, L>> _m:map.entrySet()) {
+			for(Map.Entry<K, L> _l:_m.getValue().entrySet()) {
+				L link = _l.getValue();
+				set.add(link);
+			}
 		}
 		return set;
 	}

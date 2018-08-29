@@ -90,6 +90,7 @@ public class UeLink extends Link implements WeightedLink{
 				+ surcharge + ", lastSurcharge=" + lastSurcharge + "]\n";
 	}
 
+
 	@Override
 	public float getWeight() {
 		return travelTime;
@@ -99,5 +100,7 @@ public class UeLink extends Link implements WeightedLink{
 	public void setWeight(float w) {
 		this.travelTime = w;
 	}
+	
+	
 
 }
