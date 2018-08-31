@@ -5,12 +5,6 @@
 <END OF METADATA>										
 
 ~from 	to	capacity	length	ftime	B	power	speed	toll	type	
-~ the link file was modified on 11/4/98. Refer to file named 'updates.txt'										
-
-~ The above centroid connector was deleted on 11/4/98										
-~12006	1776	100000	2.99	0	0.15	4	25	0	3	;
-~1776	12006	100000	2.99	0	0.15	4	25	0	3	;
-
 1	10293	100000	0.45	0	0.15	4	25	0	3	;
 2	10294	100000	0.5	0	0.15	4	25	0	3	;
 3	10295	100000	0.39	0	0.15	4	25	0	3	;

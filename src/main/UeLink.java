@@ -2,7 +2,7 @@ package main;
 
 import jnetwork.WeightedLink;
 
-public class UeLink extends Link implements WeightedLink{
+public class UeLink extends Link implements WeightedLink {
 	protected float flow;
 	protected float auxFlow;
 	protected float travelTime;
@@ -10,7 +10,7 @@ public class UeLink extends Link implements WeightedLink{
 	protected float lastSurcharge;
 
 	public UeLink(int from, int to, float capacity, float length, float ftime, float b, float power, float speed,
-			int toll, int type) {
+			float toll, int type) {
 		super(from, to, capacity, length, ftime, b, power, speed, toll, type);
 		this.travelTime = 0;
 		this.flow = 0;
@@ -19,9 +19,10 @@ public class UeLink extends Link implements WeightedLink{
 		this.lastSurcharge = 0;
 		updateTravelTime();
 	}
-	
+
 	public UeLink(Link l) {
-		super(l.getFrom(), l.getTo(), l.getCapacity(), l.getLength(), l.getFtime(), l.getB(), l.getPower(), l.getSpeed(), l.getToll(), l.getType());
+		super(l.getFrom(), l.getTo(), l.getCapacity(), l.getLength(), l.getFtime(), l.getB(), l.getPower(),
+				l.getSpeed(), l.getToll(), l.getType());
 		this.travelTime = 0;
 		this.flow = 0;
 		this.auxFlow = 0;
@@ -49,7 +50,7 @@ public class UeLink extends Link implements WeightedLink{
 	public float getTravelTime() {
 		return this.travelTime;
 	}
-	
+
 	public void setTravelTime(float t) {
 		this.travelTime = t;
 	}
@@ -90,17 +91,14 @@ public class UeLink extends Link implements WeightedLink{
 				+ surcharge + ", lastSurcharge=" + lastSurcharge + "]\n";
 	}
 
-
 	@Override
 	public float getWeight() {
 		return travelTime;
 	}
-	
+
 	@Override
 	public void setWeight(float w) {
 		this.travelTime = w;
 	}
-	
-	
 
 }

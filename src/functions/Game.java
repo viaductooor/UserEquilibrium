@@ -1,4 +1,4 @@
-package main;
+package functions;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,6 +11,12 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+
+import main.DataSet;
+import main.GameLink;
+import main.Link;
+import main.Odpair;
+import main.TNTPReader;
 
 public class Game {
 	// use to update rho

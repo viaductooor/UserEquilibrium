@@ -1,7 +1,12 @@
-package main;
+package functions;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import main.Floyd;
+import main.GameLink;
+import main.Odpair;
+import main.UeLink;
 
 public class GameUserEquilibrium {
 

@@ -1,8 +1,18 @@
-package main;
+package functions;
 
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+
+import jnetwork.Graph;
+import jnetwork.WeightedLink;
+import main.ChangeDemandOdpair;
+import main.DemandLink;
+import main.Floyd;
+import main.LogWriter;
+import main.Odpair;
+import main.TNTPReader;
+import main.UeDataSet;
+import main.UeLink;
 
 public final class ChangeDemand {
 	private List<UeLink> mLinks;
@@ -319,6 +329,22 @@ public final class ChangeDemand {
 		odp.setCost(sum);
 	}
 
+	public static Graph<Integer,DemandLink> opt(Graph<Integer,UeLink> graph,Graph<Integer,DemandLink> trips,float ueDiff,float surchargeDiff){
+		
+		
+	}
+	
+	public Graph<Integer,ChangeDemandLink> transChangeDemandLink(Graph<Integer,? extends WeightedLink> graph){
+		Graph<Integer, ChangeDemandLink> newGraph = new Graph<Integer,ChangeDemandLink>();
+		for(Graph.Entry<Integer, ? extends WeightedLink> e:graph.entrySet()) {
+			Integer begin = e.getBegin();
+			Integer end = e.getEnd();
+			float weight = e.getLink().getWeight();
+			newGraph.addEdge(begin, end, new ChangeDemandLink(weight));
+		}
+		return newGraph;
+	}
+	
 	public void opt(float sdiff) {
 		float originalFlow = 0;
 		float optFlow = 0;
@@ -373,6 +399,37 @@ public final class ChangeDemand {
 		lw.logWriteLink("Result links:");
 		lw.logWriteOther("origin total cost: " + originCost + ", opt total cost: " + optCost);
 		lw.close();
+	}
+	
+	class ChangeDemandLink implements WeightedLink{
+		float originCost;
+		float cost;
+		float increPercentage;
+		float originDemand;
+		boolean lock;
+		float demand;
+		public ChangeDemandLink(float demand) {
+			this.originDemand = demand;
+			this.lock = false;
+			this.increPercentage = 0;
+			this.demand = demand;
+		}
+		public ChangeDemandLink(ChangeDemandLink l) {
+			this.originCost = l.originCost;
+			this.cost = l.cost;
+			this.increPercentage = l.increPercentage;
+			this.originDemand = l.originDemand;
+			this.lock = l.lock;
+			this.demand = l.demand;
+		}
+		@Override
+		public float getWeight() {
+			return demand;
+		}
+		@Override
+		public void setWeight(float w) {
+			demand = w;
+		}
 	}
 
 	public static void main(String[] a) {

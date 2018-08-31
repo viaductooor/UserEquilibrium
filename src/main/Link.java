@@ -1,5 +1,6 @@
 package main;
 
+import jnetwork.WeightedLink;
 
 public class Link{
 	protected int from;
@@ -10,10 +11,10 @@ public class Link{
 	protected float B;
 	protected float power;
 	protected float speed;
-	protected int toll;
+	protected float toll;
 	protected int type;
 
-	public Link(int from, int to, float capacity, float length, float ftime, float b, float power, float speed, int toll,
+	public Link(int from, int to, float capacity, float length, float ftime, float b, float power, float speed, float toll,
 			int type) {
 		super();
 		this.from = from;
@@ -92,11 +93,11 @@ public class Link{
 		this.speed = speed;
 	}
 
-	public int getToll() {
+	public float getToll() {
 		return toll;
 	}
 
-	public void setToll(int toll) {
+	public void setToll(float toll) {
 		this.toll = toll;
 	}
 
@@ -113,5 +114,6 @@ public class Link{
 		return "from=" + from + ", to=" + to + ", capacity=" + capacity + ", length=" + length + ", ftime="
 				+ ftime + ", B=" + B + ", power=" + power + ", speed=" + speed + ", toll=" + toll + ", type=" + type+"\n";
 	}
+
 
 }

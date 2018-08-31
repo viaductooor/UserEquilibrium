@@ -1,4 +1,4 @@
-package functions;
+package jnetwork;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -7,16 +7,15 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import jnetwork.Graph;
-import jnetwork.WeightedLink;
-
 /**
  * Get shortest path by Dijkstra Algorithm
  * 
  * @author John Smith
  *
- * @param <K> the type of vertices
- * @param <L> the type of edges
+ * @param <K>
+ *            the type of vertices
+ * @param <L>
+ *            the type of edges
  */
 public class ShortestPath<K, L> {
 
@@ -24,8 +23,10 @@ public class ShortestPath<K, L> {
 	 * Standard Dijkstra Algorithm which to get shortest paths between one source
 	 * vertex and all other vertices
 	 * 
-	 * @param g the graph to be performed
-	 * @param begin source vertex
+	 * @param g
+	 *            the graph to be performed
+	 * @param begin
+	 *            source vertex
 	 * @return
 	 */
 	public HashMap<K, ShortestPath.Node<K>> one2all(Graph<K, ? extends WeightedLink> g, K begin) {
@@ -50,8 +51,20 @@ public class ShortestPath<K, L> {
 					minNode = entry.getValue();
 				}
 			}
+
+			if (minK == null) {
+				/**
+				 * minK is key of the vertex which takes minimal weight from the begin vertex.
+				 * When the value of it is null(and Q is not empty), it means there are at least
+				 * one vertex with minimal weight of positive_infinity. Therefore we have to break
+				 * the loop and leave the left vertices unchanged
+				 */
+				break;
+			}
+
 			Q.remove(minK);
 			S.put(minK, minNode);
+
 			for (Entry<K, ? extends WeightedLink> entry : g.getAdjNodes(minK).entrySet()) {
 				K _key = entry.getKey();
 				float _weight = entry.getValue().getWeight();
@@ -65,6 +78,7 @@ public class ShortestPath<K, L> {
 				}
 
 			}
+
 		}
 		return S;
 	}
@@ -73,13 +87,19 @@ public class ShortestPath<K, L> {
 	 * Get the shortest path between two vertices immediately without computing all
 	 * the shortest paths
 	 * 
-	 * @param g the graph to be performed
-	 * @param begin source vertex
-	 * @param end terminate vertex
+	 * @param g
+	 *            the graph to be performed
+	 * @param begin
+	 *            source vertex
+	 * @param end
+	 *            terminate vertex
 	 * @return
 	 */
 	public List<K> path(Graph<K, ? extends WeightedLink> g, K begin, K end) {
 		HashMap<K, Node<K>> map = one2all(g, begin);
+		if (begin == end) {
+			return null;
+		}
 		if (map.get(end) == null) {
 			return null;
 		} else {
@@ -89,6 +109,9 @@ public class ShortestPath<K, L> {
 			while (node.getPreK() != begin) {
 				route.add(0, node.getPreK());
 				node = map.get(node.getPreK());
+				if (node == null) {
+					break;
+				}
 			}
 			route.add(0, begin);
 			return route;
@@ -105,6 +128,9 @@ public class ShortestPath<K, L> {
 	 * @return
 	 */
 	public List<K> path(HashMap<K, HashMap<K, Node<K>>> allShortestPaths, K begin, K end) {
+		if(begin == end) {
+			return null;
+		}
 		HashMap<K, Node<K>> adjs = null;
 		Node<K> node = null;
 		List<K> route = new LinkedList<K>();
@@ -121,10 +147,26 @@ public class ShortestPath<K, L> {
 		}
 		return null;
 	}
+	
+	public float shortestPathLength(HashMap<K, HashMap<K, Node<K>>> allShortestPaths, K begin, K end) {
+		if(begin == end) {
+			return 0;
+		}
+		HashMap<K, Node<K>> adjs = null;
+		Node<K> node = null;
+		if ((adjs = allShortestPaths.get(begin)) != null) {
+			if ((node = adjs.get(end)) != null) {
+				return node.weight;
+			}
+		}
+		return Float.POSITIVE_INFINITY;
+	}
 
 	/**
 	 * Get all shortest paths
-	 * @param g the graph to be performed
+	 * 
+	 * @param g
+	 *            the graph to be performed
 	 * @return
 	 */
 	public HashMap<K, HashMap<K, Node<K>>> allPaths(Graph<K, ? extends WeightedLink> g) {

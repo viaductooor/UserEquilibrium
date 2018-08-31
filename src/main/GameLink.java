@@ -10,7 +10,7 @@ public class GameLink extends UeLink {
 	private float delta;
 
 	public GameLink(int from, int to, float capacity, float length, float ftime, float b, float power, float speed,
-			int toll, int type) {
+			float toll, int type) {
 		super(from, to, capacity, length, ftime, b, power, speed, toll, type);
 		this.rho = 0;
 		this.gamma = 0;
