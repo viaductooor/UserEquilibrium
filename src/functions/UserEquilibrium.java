@@ -10,7 +10,7 @@ import jnetwork.Graph.Entry;
 import jnetwork.ShortestPath.Node;
 import main.Link;
 import main.UeLink;
-import jnetwork.WeightedLink;
+import jnetwork.WeightedEdge;
 
 public class UserEquilibrium {
 
@@ -25,7 +25,7 @@ public class UserEquilibrium {
 	 * @param trips
 	 */
 	public static void allOrNothing(Graph<Integer, ? extends UeLink> links,
-			Graph<Integer, ? extends WeightedLink> trips) {
+			Graph<Integer, ? extends WeightedEdge> trips) {
 		HashMap<Integer, HashMap<Integer, Node<Integer>>> allPaths = new ShortestPath<Integer, UeLink>()
 				.allPaths(links);
 		BiFunction<Integer, Integer, List<Integer>> getPath = (Integer begin,
@@ -33,7 +33,7 @@ public class UserEquilibrium {
 
 		clearAuxFlow(links);
 
-		for (Entry<Integer, ? extends WeightedLink> e : trips.entrySet()) {
+		for (Entry<Integer, ? extends WeightedEdge> e : trips.entrySet()) {
 			int begin = e.getBegin();
 			int end = e.getEnd();
 			float weight = e.getLink().getWeight();
@@ -42,11 +42,10 @@ public class UserEquilibrium {
 				for (int i = 0; i < route.size() - 1; i++) {
 					int init = route.get(i);
 					int term = route.get(i + 1);
-					UeLink l = links.getLink(init, term);
+					UeLink l = links.getEdge(init, term);
 					l.setAuxFlow(l.getAuxFlow() + weight);
 				}
 			}
-
 		}
 	}
 
@@ -61,7 +60,7 @@ public class UserEquilibrium {
 	public static float lineSearch(Graph<Integer, ? extends UeLink> graph) {
 		float alpha = 1;
 		float minSum = Float.POSITIVE_INFINITY;
-		for (float al = 0; al < 1.001; al += 0.001) {
+		for (float al = 0; al < 1.00; al += 0.001) {
 			float sum = 0;
 			for (UeLink l : graph.edges()) {
 				float flow = l.getFlow();
@@ -105,7 +104,8 @@ public class UserEquilibrium {
 	public static void move(Graph<Integer, ? extends UeLink> graph, float alpha) {
 		for (Graph.Entry<Integer, ? extends UeLink> e : graph.entrySet()) {
 			UeLink l = e.getLink();
-			l.setFlow(l.getFlow() + alpha * (l.getAuxFlow() - l.getFlow()));
+			float flow = l.getFlow() + alpha * (l.getAuxFlow() - l.getFlow());
+			l.setFlow(flow);
 		}
 	}
 
@@ -153,15 +153,23 @@ public class UserEquilibrium {
 	 * 
 	 * @param graph
 	 */
-	public static Graph<Integer, UeLink> initGraph(Graph<Integer, Link> graph) {
+	public static Graph<Integer, UeLink> initGraph(Graph<Integer, ? extends Link> graph) {
 		Graph<Integer, UeLink> newGraph = new Graph<Integer, UeLink>();
-		for (Graph.Entry<Integer, Link> e : graph.entrySet()) {
+		for (Entry<Integer, ? extends Link> e : graph.entrySet()) {
 			Integer begin = e.getBegin();
 			Integer end = e.getEnd();
 			Link link = e.getLink();
 			newGraph.addDiEdge(begin, end, new UeLink(link));
 		}
 		return newGraph;
+	}
+
+	public static float getTotalTravelTime(Graph<Integer, UeLink> graph) {
+		float sum = 0;
+		for (UeLink l : graph.edges()) {
+			sum += l.getTravelTime() * l.getFlow();
+		}
+		return sum;
 	}
 
 	/**
@@ -171,13 +179,10 @@ public class UserEquilibrium {
 	 * @param diff
 	 * @return
 	 */
-	public static Graph<Integer, UeLink> ue(Graph<Integer, Link> graph,
-			Graph<Integer, ? extends WeightedLink> trips, float diff) {
+	public static void ue(Graph<Integer, ? extends UeLink> workgraph, Graph<Integer, ? extends WeightedEdge> trips,
+			float diff) {
 
-		Graph<Integer, UeLink> workgraph = initGraph(graph);
-		/**
-		 * step 0
-		 */
+		// step 0
 		allOrNothing(workgraph, trips);
 		y2x(workgraph);
 		float alpha = 1;
@@ -190,9 +195,7 @@ public class UserEquilibrium {
 			move(workgraph, alpha);
 			float aftermove = getTotalFlow(workgraph);
 			step = aftermove - beforemove;
-			System.out.println("UserEquilibrium step: " + step);
 		}
 		updateAllTraveltime(workgraph);
-		return workgraph;
 	}
 }

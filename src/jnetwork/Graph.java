@@ -7,147 +7,165 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**An implementation of graph with structure of adjacency list.
+/**
+ * An implementation of graph with structure of adjacency list.
  * 
  * @author John Smith
  *
- * @param <K> Type of the nodes
- * @param <L> Type of the links
+ * @param <V>
+ * @param <E>
  * 
  */
-public class Graph<K, L> {
-	private HashMap<K, HashMap<K, L>> map;
+public class Graph<V, E> {
+	private HashMap<V, HashMap<V, E>> map;
 
 	public Graph() {
-		map = new HashMap<K, HashMap<K, L>>();
+		map = new HashMap<V, HashMap<V, E>>();
 	}
 
 	/**
 	 * 
-	 * @param node
+	 * @param vertex
 	 * @return the set of the node's adjacent nodes
 	 */
-	public HashMap<K, L> addVertic(K node) {
-		return map.put(node, new HashMap<K, L>());
+	public HashMap<V, E> addVertic(V vertex) {
+		return map.put(vertex, new HashMap<V, E>());
 	}
 
 	/**
 	 * 
-	 * @param initNode
-	 * @param endNode
-	 * @param linkInfo
-	 * @return the added linkInfo
+	 * @param begin
+	 * @param end
+	 * @param edge
+	 * @return the added edge
 	 */
-	public L addDiEdge(K initNode, K endNode, L linkInfo) {
-		if (map.containsKey(initNode)) {
-			return map.get(initNode).put(endNode, linkInfo);
+	public E addDiEdge(V begin, V end, E edge) {
+		if (map.containsKey(begin)) {
+			return map.get(begin).put(end, edge);
 		} else {
-			addVertic(initNode);
-			return addDiEdge(initNode, endNode, linkInfo);
+			addVertic(begin);
+			return addDiEdge(begin, end, edge);
 		}
 	}
-	
-	public void addEdge(K initNode,K endNode, L linkInfo) {
-		addDiEdge(initNode,endNode,linkInfo);
-		addDiEdge(endNode,initNode,linkInfo);
-	}
 
+	public void addEdge(V begin, V end, E edge) {
+		addDiEdge(begin, end, edge);
+		addDiEdge(end, begin, edge);
+	}
 
 	/**
 	 * 
-	 * @param initNode
-	 * @param endNode
-	 * @return linkInfo
+	 * @param begin
+	 * @param end
+	 * @return edge
 	 */
-	public L getLink(K initNode, K endNode) {
-		if(map.containsKey(initNode)) {
-			HashMap<K, L> adjs = map.get(initNode);
-			if(adjs.containsKey(endNode)) {
-				return adjs.get(endNode);
+	public E getEdge(V begin, V end) {
+		if (map.containsKey(begin)) {
+			HashMap<V, E> adjs = map.get(begin);
+			if (adjs.containsKey(end)) {
+				return adjs.get(end);
 			}
 		}
 		return null;
 	}
-
 
 	/**
 	 * 
 	 * @param node
 	 * @return the map of adjacent nodes of this node
 	 */
-	public HashMap<K, L> getAdjNodes(K node) {
+	public HashMap<V, E> getAdjNodes(V node) {
 		return map.get(node);
 	}
-	
-	public static class Entry<K,L>{
-		K begin;
-		K end;
-		L link;
-		public Entry(K begin,K end,L link){
+
+	public static class Entry<V, E> {
+		V begin;
+		V end;
+		E edge;
+
+		public Entry(V begin, V end, E link) {
 			this.begin = begin;
 			this.end = end;
-			this.link = link;
+			this.edge = link;
 		}
-		public K getBegin() {
+
+		public V getBegin() {
 			return begin;
 		}
-		public K getEnd() {
+
+		public V getEnd() {
 			return end;
 		}
-		public L getLink() {
-			return link;
+
+		public E getLink() {
+			return edge;
 		}
 	}
-	
+
 	/**
-	 * An entrySet is a set of entries of type {@link Entry}.
-	 * Use function to visit all the links of the graph.
+	 * An entrySet is a set of entries of type {@link Entry}. Use function to visit
+	 * all the links of the graph.
+	 * 
 	 * @return
 	 */
-	public List<Graph.Entry<K,L>> entrySet() {
-		List<Entry<K, L>> l = new LinkedList<Graph.Entry<K,L>>();
-		for(Map.Entry<K, HashMap<K, L>> _m:map.entrySet()) {
-			K init = _m.getKey();
-			for(Map.Entry<K, L> _l:_m.getValue().entrySet()) {
-				K end = _l.getKey();
-				L link = _l.getValue();
-				l.add(new Graph.Entry<K, L>(init, end, link));
+	public List<Graph.Entry<V, E>> entrySet() {
+		List<Entry<V, E>> l = new LinkedList<Graph.Entry<V, E>>();
+		for (Map.Entry<V, HashMap<V, E>> _m : map.entrySet()) {
+			V init = _m.getKey();
+			for (Map.Entry<V, E> _l : _m.getValue().entrySet()) {
+				V end = _l.getKey();
+				E link = _l.getValue();
+				l.add(new Graph.Entry<V, E>(init, end, link));
 			}
 		}
 		return l;
 	}
-	
+
 	/**
 	 * Return all the distinct nodes of the graph
+	 * 
 	 * @return
 	 */
-	public Set<K> nodes(){
-		HashSet<K> set = new HashSet<K>();
-		for (Map.Entry<K, HashMap<K,L>> entry:map.entrySet()) {
+	public Set<V> vertices() {
+		HashSet<V> set = new HashSet<V>();
+		for (Map.Entry<V, HashMap<V, E>> entry : map.entrySet()) {
 			set.add(entry.getKey());
 		}
 		return set;
 	}
-	
-	public Set<L> edges(){
-		HashSet<L> set = new HashSet<L>();
-		for(Map.Entry<K, HashMap<K, L>> _m:map.entrySet()) {
-			for(Map.Entry<K, L> _l:_m.getValue().entrySet()) {
-				L link = _l.getValue();
+
+	public Set<E> edges() {
+		HashSet<E> set = new HashSet<E>();
+		for (Map.Entry<V, HashMap<V, E>> _m : map.entrySet()) {
+			for (Map.Entry<V, E> _l : _m.getValue().entrySet()) {
+				E link = _l.getValue();
 				set.add(link);
 			}
 		}
 		return set;
 	}
-	
-	public boolean containsEdge(K initNode, K endNode) {
-		if(getLink(initNode, endNode) != null)
+
+	/**
+	 * Return true if the graph contains the edge which begins, else return false.
+	 * 
+	 * @param begin
+	 * @param end
+	 * @return
+	 */
+	public boolean containsEdge(V begin, V end) {
+		if (getEdge(begin, end) != null)
 			return true;
 		return false;
 	}
-	
-	public boolean containsVertex(K vertex) {
-		if(map.containsKey(vertex))
+
+	/**
+	 * Return true if the graph contains the vertex, else return false.
+	 * 
+	 * @param vertex
+	 * @return
+	 */
+	public boolean containsVertex(V vertex) {
+		if (map.containsKey(vertex))
 			return true;
 		return false;
 	}

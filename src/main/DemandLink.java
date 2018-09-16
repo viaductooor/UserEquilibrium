@@ -1,7 +1,7 @@
 package main;
-import jnetwork.WeightedLink;
+import jnetwork.WeightedEdge;
 
-public class DemandLink implements WeightedLink{
+public class DemandLink implements WeightedEdge{
 	private float demand;
 	public DemandLink(float d) {
 		this.demand = d;

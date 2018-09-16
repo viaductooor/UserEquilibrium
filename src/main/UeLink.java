@@ -1,8 +1,8 @@
 package main;
 
-import jnetwork.WeightedLink;
+import jnetwork.WeightedEdge;
 
-public class UeLink extends Link implements WeightedLink {
+public class UeLink extends Link implements WeightedEdge {
 	protected float flow;
 	protected float auxFlow;
 	protected float travelTime;

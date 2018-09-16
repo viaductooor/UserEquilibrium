@@ -1,8 +1,8 @@
 package main;
 
-import jnetwork.WeightedLink;
+import jnetwork.AbstractEdge;
 
-public class Link{
+public class Link extends AbstractEdge{
 	protected int from;
 	protected int to;
 	protected float capacity;
@@ -27,6 +27,10 @@ public class Link{
 		this.speed = speed;
 		this.toll = toll;
 		this.type = type;
+	}
+	
+	public Link(Link l) {
+		this(l.from,l.to,l.capacity,l.length,l.ftime,l.B,l.power,l.speed,l.toll,l.type);
 	}
 
 	public int getFrom() {
@@ -114,6 +118,24 @@ public class Link{
 		return "from=" + from + ", to=" + to + ", capacity=" + capacity + ", length=" + length + ", ftime="
 				+ ftime + ", B=" + B + ", power=" + power + ", speed=" + speed + ", toll=" + toll + ", type=" + type+"\n";
 	}
+
+	@Override
+	public String[] header() {
+		return new String[] {"from","to","capacity","length","ftime","B","power","speed","toll","type"};
+	}
+
+	@Override
+	public float[] items() {
+		return new float[] {from,to,capacity,length,ftime,B,power,speed,toll,type};
+	}
+
+	@Override
+	public float getWeight() {
+		return ftime;
+	}
+
+	@Override
+	public void setWeight(float w) {}
 
 
 }
