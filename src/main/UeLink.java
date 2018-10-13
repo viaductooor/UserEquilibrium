@@ -1,8 +1,9 @@
 package main;
 
+import file.Excelable;
 import jnetwork.WeightedEdge;
 
-public class UeLink extends Link implements WeightedEdge {
+public class UeLink extends Link implements WeightedEdge{
 	protected float flow;
 	protected float auxFlow;
 	protected float travelTime;
@@ -100,5 +101,14 @@ public class UeLink extends Link implements WeightedEdge {
 	public void setWeight(float w) {
 		this.travelTime = w;
 	}
-
+	
+	@Override
+	public String[] header(){
+		return new String[] {"volume","traveltime","surcharge","lastSurcharge"};
+	}
+	
+	@Override
+	public float[] items() {
+		return new float[] {this.getFlow(),this.getTravelTime(),this.getSurcharge(),this.getLastSurcharge()};
+	}
 }

@@ -4,13 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.BiFunction;
 
+import functions.ShortestPath.Node;
 import jnetwork.Graph;
-import jnetwork.ShortestPath;
 import jnetwork.Graph.Entry;
-import jnetwork.ShortestPath.Node;
+import jnetwork.WeightedEdge;
 import main.Link;
 import main.UeLink;
-import jnetwork.WeightedEdge;
 
 public class UserEquilibrium {
 
@@ -29,7 +28,7 @@ public class UserEquilibrium {
 		HashMap<Integer, HashMap<Integer, Node<Integer>>> allPaths = new ShortestPath<Integer, UeLink>()
 				.allPaths(links);
 		BiFunction<Integer, Integer, List<Integer>> getPath = (Integer begin,
-				Integer end) -> new ShortestPath<Integer, UeLink>().path(allPaths, begin, end);
+				Integer end) -> new ShortestPath<Integer, UeLink>().shortestPath(allPaths, begin, end);
 
 		clearAuxFlow(links);
 

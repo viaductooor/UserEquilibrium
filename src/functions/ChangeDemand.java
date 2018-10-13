@@ -3,9 +3,10 @@ package functions;
 import java.util.HashMap;
 import java.util.List;
 
+import file.ExcelUtils;
+import functions.ShortestPath.Node;
 import jnetwork.Graph;
-import jnetwork.ShortestPath;
-import jnetwork.ShortestPath.Node;
+import jnetwork.Graph.Entry;
 import jnetwork.WeightedEdge;
 import main.Link;
 import main.UeLink;
@@ -87,7 +88,7 @@ public class ChangeDemand {
 		per = per + n;
 		demandlink.increPercentage = per;
 
-		List<Integer> route = new ShortestPath<Integer, ChangeDemandLink>().path(paths, origin, dest);
+		List<Integer> route = new ShortestPath<Integer, ChangeDemandLink>().shortestPath(paths, origin, dest);
 
 		for (int i = 0; i < route.size() - 1; i++) {
 			UeLink l = graph.getEdge(route.get(i), route.get(i + 1));
@@ -146,7 +147,7 @@ public class ChangeDemand {
 	public void updateCost(HashMap<Integer, HashMap<Integer, ShortestPath.Node<Integer>>> paths,
 			Graph<Integer, UeLink> graph, ChangeDemandLink demandlink, int origin, int dest) {
 		float sum = 0;
-		List<Integer> route = new ShortestPath<Integer, UeLink>().path(paths, origin, dest);
+		List<Integer> route = new ShortestPath<Integer, UeLink>().shortestPath(paths, origin, dest);
 		for (int i = 0; i < route.size() - 1; i++) {
 			UeLink link = graph.getEdge(route.get(i), route.get(i + 1));
 			sum = sum + link.getTravelTime();
@@ -254,7 +255,48 @@ public class ChangeDemand {
 
 		return linkGraph;
 	}
+	
+	
+	public Graph<Integer, UeLink> optWithoutMsa() {
+		Graph<Integer, UeLink> linkGraph = UserEquilibrium.initGraph(graph);
 
+		UserEquilibrium.ue(linkGraph, trips, uediff);
+
+		int n = 0;
+		float diff;
+		do {
+			n++;
+			UserEquilibrium.ue(linkGraph, trips, uediff);
+			for (UeLink l : linkGraph.edges()) {
+				float marginalCost = computeMarginalCost(l.getFlow(), l.getFtime(), l.getCapacity());
+				float nowSurcharge = l.getSurcharge();
+				l.setLastSurcharge(nowSurcharge);
+				l.setSurcharge(marginalCost);
+			}
+			System.out.println("total volume: "+allVolume(linkGraph)+",total cost: "+allCost(linkGraph));
+			ExcelUtils.writeGraph(linkGraph, "files/sf_opt_without_msa/res_"+n+".xls");
+			
+		} while (n<20);
+		
+		return linkGraph;
+	}
+
+	public float allVolume(Graph<Integer,UeLink> mgraph) {
+		float sum = 0;
+		for(Entry<Integer, UeLink> e:mgraph.entrySet()) {
+			sum+=e.getLink().getFlow();
+		}
+		return sum;
+	}
+	
+	public float allCost(Graph<Integer,UeLink> mgraph) {
+		float sum = 0;
+		for(Entry<Integer, UeLink> e:mgraph.entrySet()) {
+			sum+=e.getLink().getFlow()*e.getLink().getTravelTime();
+		}
+		return sum;
+	}
+	
 	/**
 	 * main method of this class
 	 */
